@@ -19,15 +19,15 @@ CREATE TABLE products (
   description TEXT NOT NULL,
   quantity INTEGER NOT NULL,
   price INTEGER NOT NULL,
-  user_id INTEGER
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
 
 -- transactions table
 DROP TABLE IF EXISTS transactions CASCADE;
 CREATE TABLE transactions (
   id SERIAL PRIMARY KEY NOT NULL,
-  buyer_id INTEGER NOT NULL,
-  seller_id INTEGER NOT NULL,
+  buyer_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  seller_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   date DATE NOT NULL,
   balance INTEGER NOT NULL
 );
@@ -36,9 +36,9 @@ CREATE TABLE transactions (
 DROP TABLE IF EXISTS product_on_sales CASCADE;
 CREATE TABLE product_on_sales (
   id SERIAL PRIMARY KEY NOT NULL,
-  product_id INTEGER NOT NULL,
+  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,
   date_of_lisitng DATE NOT NULL,
-  buyer_id INTEGER NOT NULL,
+  buyer_id INTEGER REFERENCES products(id) ON DELETE CASCADE,
   is_available BOOLEAN DEFAULT TRUE
 );
 
@@ -46,16 +46,16 @@ CREATE TABLE product_on_sales (
 DROP TABLE IF EXISTS favourites CASCADE;
 CREATE TABLE favourites (
   id SERIAL PRIMARY KEY NOT NULL,
-  user_id INTEGER NOT NULL,
-  product_id INTEGER NOT NULL
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE
 );
 
 -- message_master
 DROP TABLE IF EXISTS message_master CASCADE;
 CREATE TABLE message_master (
   id SERIAL PRIMARY KEY NOT NULL,
-  sender_id INTEGER NOT NULL,
-  receiver_id INTEGER NOT NULL,
+  sender_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  receiver_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   date_time DATE
 );
 
@@ -63,8 +63,8 @@ CREATE TABLE message_master (
 DROP TABLE IF EXISTS message_details CASCADE;
 CREATE TABLE message_details (
   id SERIAL PRIMARY KEY NOT NULL,
-  sender_id INTEGER NOT NULL,
-  receiver_id INTEGER NOT NULL,
+  sender_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  receiver_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   date_time DATE NOT NULL,
-  message_text TEXT NOT NULL,
+  message_text TEXT NOT NULL
 );
