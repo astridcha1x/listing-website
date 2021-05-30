@@ -10,10 +10,11 @@ const router  = express.Router();
 
 
 module.exports = (db) => {
+
   router.get("/", (req, res) => {
-    console.log("users")
     db.query(`SELECT * FROM users;`)
       .then(data => {
+        console.log("HELLO");
         const users = data.rows;
         res.json({ users });
       })
@@ -23,5 +24,15 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
+  router.get('/:user_id',()=>{
+    //user's page
+  })
+
+  router.post('/:user_id/delete_favourite',()=>{
+    //deletes items from favourites on user's page
+  })
+
   return router;
+
 };
