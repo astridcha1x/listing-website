@@ -11,6 +11,9 @@ INSERT INTO products (name, image, type, description, quantity, price, user_id) 
 INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name3', 'url', 'outdoor', 'description here', 8, 2500, 2);
 INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name4', 'url', 'indoor', 'description here', 15, 2000, 4);
 INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name5', 'url', 'indoor', 'description here', 4, 4000, 5);
+INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name6', 'url', 'outdoor', 'description here', 3, 6000, 5);
+INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name7', 'url', 'outdoor', 'description here', 5, 8000, 5);
+INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name8', 'url', 'outdoor', 'description here', 7, 3000, 5);
 
 -- transactions table seeds
 INSERT INTO transactions (buyer_id, seller_id, date, balance) VALUES (1, 2, '2021-05-28', 5500);
