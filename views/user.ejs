@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home Page</title>
+    <title>User</title>
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -12,7 +12,14 @@
   </head>
 
   <body>
-    <h1>Hello World!</h1>
-    <h2> <%= user.name %></h2>
+    <h1>Hi there</h1>
+    <h2> <%= user.email %></h2>
+    <% for (let product in products) { %>
+          <p><%= products[product].name %></p>
+    <% } %>
+    <% for (let item in favourites) { %>
+      <p><%= favourites[item].product_id %></p>
+    <% } %>
   </body>
+</html>
 </html>
