@@ -25,9 +25,18 @@ module.exports = (db) => {
       });
   });
 
-  router.get('/:user_id',()=>{
-    //user's page
-  })
+  router.get('/:user_id',(req, res) => {
+    //user's data
+    db.query(`SELECT * FROM users WHERE id = $1;`, [req.params["user_id"]])
+    .then(data => {
+      res.json(data.rows[0]);
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+  });
 
   router.post('/:user_id/delete_favourite',()=>{
     //deletes items from favourites on user's page
