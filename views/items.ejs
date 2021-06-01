@@ -22,7 +22,7 @@
       </div>
       <section>
         <% for (let item in products) { %>
-          <div class="featured-items"><img src="<%= products[item].image %>" width="100px" height="100px" alt="succulent"><button><a href=""><%= products[item].name %></a></button></div>
+          <div class="featured-items"><img src="<%= products[item].image %>" width="100px" height="100px" alt="succulent"><button><a href=""><%= products[item].name %></a></button><span>$<%= products[item].price /100 %>.00</span></div>
         <% } %>
         </section>
   </div>
