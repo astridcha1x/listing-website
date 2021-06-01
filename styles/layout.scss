@@ -99,6 +99,7 @@ div.wrapper {
 
   max-width: 100%;
   margin: 0 auto;
+  padding: 0 40px;
 
 
     h2 {
@@ -107,15 +108,15 @@ div.wrapper {
       text-align: center;
     }
 
+  // featured Items section
   section.feature-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 
 
     .featured-items {
       position: relative;
       width: 260px;
-      // border: 1px solid red;
       display: flex;
       flex-direction: column;
       img {
@@ -129,14 +130,36 @@ div.wrapper {
     }
 
   }
-}
 
-section.about-container {
+  // About Us section
+  section.about-container {
 
-  h2 {
-    font-family: $title-font;
-    font-size: 24px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+
+    .about-text {
+
+      text-align: center;
+      width: 50%;
+      background-color: #98b89182;
+      border-radius: 8px 0 0 8px;
+      padding: 40px;
+
+      h2 {
+      font-family: $title-font;
+      font-size: 24px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+
+    }
+
+    img {
+      width: 50%;
+      border-radius: 0 8px 8px 0;
+    }
   }
-
 }
+
