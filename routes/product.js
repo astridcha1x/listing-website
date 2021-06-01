@@ -17,7 +17,7 @@ module.exports = (db) => {
       .then(results => {
         const user = results[0].rows[0];
         const products = results[1].rows[0];
-        const templateVars = { user, products};
+        const templateVars = { user, products };
         res.render('product', templateVars);
         // res.json(data.rows[0]);
       })

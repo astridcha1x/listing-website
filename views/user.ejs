@@ -12,17 +12,45 @@
   </head>
 
   <body>
-    <h1>Hi there</h1>
-    <h2> <%= user.email %></h2>
-    <% for (let product in products) { %>
-          <p><%= products[product].name %></p>
-    <% } %>
-    <% for (let item in favourites) { %>
-      <p><%= favourites[item].product_id %></p>
-    <% } %>
+
+    <% include partials/_header %>
+
+    <!-- HERO SECTION -->
+    <div class="hero-section">
+      <img src="" alt="">
+      <div class="hero-username">
+        <span><%= user.name %></span>
+        <p>bio</p>
+      </div>
+    </div>
+
+    <!-- FAVOURITES SECTION -->
+    <div class="favourites">
+      <h2>FAVOURITES</h2>
+      <% for (let item in favourites) { %>
+        <p><%= favourites[item].product_id %></p>
+        <form method="GET" action="/<%= favourites[item] %>/<%= favourites[item].product_id %>">
+          <!-- when user clicks button go to product page ?? -->
+          <button>button</button>
+          </form>
+      <% } %>
+    </div>
+
+    <!-- USER LISTING SECTION -->
+    <div class="user-listing">
+      <h2>USER LISTINGS</h2>
+      <% for (let product in products) { %>
+            <p><%= products[product].name %></p>
+            <form method="GET" action="/<%= products[product] %>/<%= products[product].name %>">
+              <button>
+              </button>
+            </form>
+      <% } %>
+    </div>
     <!-- <td><form method="POST" action= "/:user_id/delete_favourites">
       <button id="fav_delete" class= "btn btn-outline-primary" type="submit">delete</button>
     </form></td> -->
+
   </body>
 </html>
 </html>
