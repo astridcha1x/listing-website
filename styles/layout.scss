@@ -1,9 +1,109 @@
-// See: https://sass-lang.com/
+// See: https://sass-lang.com/ //
+
+/*
+- Sass uses $ to make something a variable
+*/
+
+// VARIABLES //
+$regular-font: 'Open Sans', sans-serif;
+$title-font: 'Oswald', sans-serif;
+$regular-text-color: #6b717f;
+$link-color: #95a986;
 
 body {
+  font-family: $regular-font;
   background-color: #EEE;
+  color: $regular-text-color;
 
   h1 {
+    font-family: $title-font;
+
     color: #244751;
+
+  }
+
+  a {
+    color: $link-color;
+    text-decoration: none;
+  }
+
+}
+
+// HEADER //
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  div.nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 1rem;
+    font-family: $regular-font;
+
+      a {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+  }
+
+  p {
+    font-family: $title-font;
+  }
+}
+
+// INDEX / HOME PAGE //
+div.hero-container {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  background-color: #496742;
+
+  .hero-content {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+
+    .fas {
+      text-align: center;
+      color: #FFF;
+    }
+
+    h1 {
+      font-family: $title-font;
+      font-size: 60px;
+      color: #FFF;
+    }
+
+  }
+
+}
+
+div.wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+
+  section.feature-container {
+
+
+    .featured-items {
+
+
+      img {
+        object-fit: fill;
+        width: 10%;
+        height: 10%;
+      }
+    }
+
   }
 }
