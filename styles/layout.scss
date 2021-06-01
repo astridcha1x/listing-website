@@ -113,18 +113,18 @@ div.wrapper {
 
 
     .featured-items {
-      width: 200px;
-      height: 200px;
-      border: 1px solid red;
+      position: relative;
+      width: 260px;
+      // border: 1px solid red;
       display: flex;
       flex-direction: column;
       img {
         object-fit: fill;
-        width: 10%;
-        height: 10%;
+        width: 260px;
+
       }
       button {
-        margin: 16px;
+        margin: 16px 0;
       }
     }
 
