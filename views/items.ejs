@@ -7,13 +7,24 @@
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
+        <!-- GOOGLE FONTS: Karla, Open Sans, Oswald -->
+        <link href="https://fonts.googleapis.com/css2?family=Karla&family=Open+Sans&family=Oswald&display=swap" rel="stylesheet">
+
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
 
   <body>
     <% include partials/_header %>
-    <h1>Hello World!</h1>
-    <h2> <%= user.name %></h2>
+    <div class="wrapper">
+      <div class="filter_container">
+
+      </div>
+      <section>
+        <% for (let item in products) { %>
+          <div class="featured-items"><img src="<%= products[item].image %>" width="100px" height="100px" alt="succulent"><button><a href=""><%= products[item].name %></a></button></div>
+        <% } %>
+        </section>
+  </div>
   </body>
 </html>

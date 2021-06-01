@@ -43,7 +43,7 @@ const productOnSaleRoutes = require("./routes/product");
 // Note: Feel free to replace the example routes below with your own
 app.use("/users", usersRoutes(db));
 // app.use("/widgets", widgetsRoutes(db));
-// app.use("/items", itemRoutes(db));
+app.use("/items", itemRoutes(db));
 app.use("/favourites", favouriteRoutes(db));
 app.use("/product_on_sales", productOnSaleRoutes(db));
 

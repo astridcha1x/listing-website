@@ -6,14 +6,14 @@ INSERT INTO users (name, email, phone, password, address) VALUES ('Dalcy', 'exam
 INSERT INTO users (name, email, phone, password, address) VALUES ('Ethan', 'example5@lhl.com', '6041111115', 'password', '115 1st avenue W, Vancouver, BC V5Z 0B9');
 
 -- Products table seeds
-INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('Echeveria', 'https://cdn11.bigcommerce.com/s-ca41wpfzci/images/stencil/1280x1280/products/611/1360/Canadian-IMG_3928__58465.1589493969.jpg', 'outdoor', 'description here', 20, 2000, 1);
-INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name2', 'url', 'indoor', 'description here', 10, 3000, 2);
-INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name3', 'url', 'outdoor', 'description here', 8, 2500, 2);
-INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name4', 'url', 'indoor', 'description here', 15, 2000, 4);
-INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name5', 'url', 'indoor', 'description here', 4, 4000, 5);
-INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name6', 'url', 'outdoor', 'description here', 3, 6000, 5);
-INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name7', 'url', 'outdoor', 'description here', 5, 8000, 5);
-INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name8', 'url', 'outdoor', 'description here', 7, 3000, 5);
+INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('Echeveria', 'https://images.unsplash.com/photo-1509423350716-97f9360b4e09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80', 'outdoor', 'description here', 20, 2000, 1);
+INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name2', 'https://images.unsplash.com/photo-1508022713622-df2d8fb7b4cd?ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NTF8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', 'indoor', 'description here', 10, 3000, 2);
+INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name3', 'https://images.unsplash.com/photo-1508022240297-e87369353901?ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NTN8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', 'outdoor', 'description here', 8, 2500, 2);
+INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name4', 'https://images.unsplash.com/photo-1508021837634-3917692f66ba?ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NTV8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', 'indoor', 'description here', 15, 2000, 4);
+INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name5', 'https://images.unsplash.com/photo-1508022057371-4f937727f440?ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NTR8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', 'indoor', 'description here', 4, 4000, 5);
+INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name6', 'https://images.unsplash.com/photo-1509587584298-0f3b3a3a1797?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MzN8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60', 'outdoor', 'description here', 3, 6000, 5);
+INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name7', 'https://images.unsplash.com/photo-1509221977468-59ebf138e25e?ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NDR8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', 'outdoor', 'description here', 5, 8000, 5);
+INSERT INTO products (name, image, type, description, quantity, price, user_id) VALUES ('name8', 'https://images.unsplash.com/photo-1509221047594-b87944387edf?ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NDZ8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', 'outdoor', 'description here', 7, 3000, 5);
 
 -- transactions table seeds
 INSERT INTO transactions (buyer_id, seller_id, date, balance) VALUES (1, 2, '2021-05-28', 5500);
@@ -21,9 +21,9 @@ INSERT INTO transactions (buyer_id, seller_id, date, balance) VALUES (3, 2, '202
 INSERT INTO transactions (buyer_id, seller_id, date, balance) VALUES (1, 4, '2021-01-19', 2000);
 
 -- product_on_sales
-INSERT INTO product_on_sales (product_id, price, date_of_listing, seller_id, is_available) VALUES (1, 3000, '2021-05-25', 2, true);
-INSERT INTO product_on_sales (product_id, price, date_of_listing, seller_id, is_available) VALUES (2, 2500, '2020-03-31', 2, true);
-INSERT INTO product_on_sales (product_id, price, date_of_listing, seller_id, is_available) VALUES (4, 2000, '2020-12-20', 4, true);
+INSERT INTO product_on_sales (product_id, image, price, date_of_listing, seller_id, is_available) VALUES (1, 'url', 3000, '2021-05-25', 1, true);
+INSERT INTO product_on_sales (product_id, image, price, date_of_listing, seller_id, is_available) VALUES (2, 'url', 2500, '2020-03-31', 2, true);
+INSERT INTO product_on_sales (product_id, image, price, date_of_listing, seller_id, is_available) VALUES (4, 'url', 2000, '2020-12-20', 4, true);
 
 -- favourites
 INSERT INTO favourites (user_id, product_id) VALUES (1, 5);
