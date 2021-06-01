@@ -33,16 +33,15 @@ body {
 nav {
   display: flex;
   justify-content: space-between;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 
   div.nav-links {
     display: flex;
     justify-content: space-evenly;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-right: 4rem;
     padding-top: 1rem;
     font-family: $regular-font;
 
@@ -79,8 +78,16 @@ div.hero-container {
     }
 
     h1 {
+      margin-bottom: 0;
+      letter-spacing: 10px;
       font-family: $title-font;
       font-size: 60px;
+      color: #FFF;
+    }
+
+    p {
+      text-align: center;
+      font-family: $regular-font;
       color: #FFF;
     }
 
@@ -93,9 +100,6 @@ div.wrapper {
   max-width: 100%;
   margin: 0 auto;
 
-  section.feature-container {
-    display: flex;
-    justify-content: space-around;
 
     h2 {
       font-family: $title-font;
@@ -103,13 +107,24 @@ div.wrapper {
       text-align: center;
     }
 
+  section.feature-container {
+    display: flex;
+    justify-content: space-around;
+
+
     .featured-items {
-
-
+      width: 200px;
+      height: 200px;
+      border: 1px solid red;
+      display: flex;
+      flex-direction: column;
       img {
         object-fit: fill;
         width: 10%;
         height: 10%;
+      }
+      button {
+        margin: 16px;
       }
     }
 
