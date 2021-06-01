@@ -21,9 +21,9 @@ INSERT INTO transactions (buyer_id, seller_id, date, balance) VALUES (3, 2, '202
 INSERT INTO transactions (buyer_id, seller_id, date, balance) VALUES (1, 4, '2021-01-19', 2000);
 
 -- product_on_sales
-INSERT INTO product_on_sales (product_id, date_of_listing, seller_id, is_available) VALUES (1, '2021-05-25', 2, true);
-INSERT INTO product_on_sales (product_id, date_of_listing, seller_id, is_available) VALUES (2, '2020-03-31', 2, true);
-INSERT INTO product_on_sales (product_id, date_of_listing, seller_id, is_available) VALUES (4, '2020-12-20', 4, true);
+INSERT INTO product_on_sales (product_id, price, date_of_listing, seller_id, is_available) VALUES (1, 3000, '2021-05-25', 2, true);
+INSERT INTO product_on_sales (product_id, price, date_of_listing, seller_id, is_available) VALUES (2, 2500, '2020-03-31', 2, true);
+INSERT INTO product_on_sales (product_id, price, date_of_listing, seller_id, is_available) VALUES (4, 2000, '2020-12-20', 4, true);
 
 -- favourites
 INSERT INTO favourites (user_id, product_id) VALUES (1, 5);

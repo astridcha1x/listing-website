@@ -24,11 +24,12 @@ CREATE TABLE products (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
 
--- product_on_sales
+-- product_on_sales (one specific item)
 DROP TABLE IF EXISTS product_on_sales CASCADE;
 CREATE TABLE product_on_sales (
   id SERIAL PRIMARY KEY NOT NULL,
   product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,
+  price INTEGER NOT NULL,
   date_of_listing DATE NOT NULL,
   seller_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   is_available BOOLEAN DEFAULT TRUE

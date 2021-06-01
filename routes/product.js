@@ -3,13 +3,23 @@ const router  = express.Router();
 
 
 module.exports = (db) => {
-
-
     // print one specific item from one user
+    // message box when user clicks contact seller button
     router.get('/:seller_id/:product_id',(req, res) => {
-      db.query(`SELECT * FROM product_on_sales WHERE id = $1;`, [req.params["seller_id"]])
-      .then(data => {
-        res.json(data.rows[0]);
+      const user = `SELECT * FROM users WHERE id = $1;`;
+      const product = `SELECT * FROM products WHERE user_id = $1 AND id = $2;`;
+      const userPromise = db.query(user, [req.params["seller_id"]]);
+      const productPromise = db.query(product, [req.params["seller_id"], req.params["product_id"]]);
+      const promises = [userPromise, productPromise];
+      Promise.all(promises)
+
+      // db.query(`SELECT * FROM product_on_sales WHERE id = $1;`, [req.params["seller_id"]])
+      .then(results => {
+        const user = results[0].rows[0];
+        const products = results[1].rows[0];
+        const templateVars = { user, products};
+        res.render('product', templateVars);
+        // res.json(data.rows[0]);
       })
       .catch(err => {
         res
