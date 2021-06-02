@@ -90,18 +90,26 @@ div.wrapper {
     display: flex;
     justify-content: space-between;
 
+    .feature-item-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-    .featured-items {
+      .featured-items {
       position: relative;
       width: 260px;
       display: flex;
       flex-direction: column;
-      img {
-        object-fit: fill;
-        width: 260px;
+
+        img {
+          object-fit: fill;
+          width: 260px;
+        }
 
       }
+
       button {
+        background-color: #98b89182;
         margin: 16px 0;
       }
     }

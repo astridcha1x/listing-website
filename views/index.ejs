@@ -36,11 +36,12 @@
     <h2>Featured Items</h2>
 
       <section class="feature-container">
-
-        <div class="featured-items"><img src="/images/image1.jpg" alt="succulent"><button><a href="">VIEW LISTING</a></button></div>
-        <div class="featured-items"><img src="/images/image2.jpg" alt="succulent"><button><a href="">VIEW LISTING</a></button></div>
-        <div class="featured-items"><img src="/images/image3.jpg" alt="succulent"><button><a href="">VIEW LISTING</a></button></div>
-        <div class="featured-items"><img src="/images/image4.jpg" alt="succulent"><button><a href="">VIEW LISTING</a></button></div>
+          <% for (let item in products) { %>
+            <div class="feature-item-wrapper">
+              <div class="featured-items"><img src="<%= products[item].image %>" width="400px" height="400px" alt="succulent"></div>
+              <form class="feature-btn" action="product/<%= products[item].user_id %>/<%= products[item].id %>" method="GET"><button ><%= products[item].name %></button></form>
+            </div>
+           <% } %>
       </section>
       <section class="feature-container">
         <div class="feature-text">

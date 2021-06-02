@@ -54,9 +54,28 @@ app.use("/product", productOnSaleRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
-  console.log("fire");
-  res.render("index");
+  const user = `SELECT * FROM users WHERE id = $1;`;
+    const products = `SELECT * FROM products LIMIT 4;`;
+    const userPromise = db.query(user, [req.params["user_id"]]);
+    const productPromise = db.query(products);
+
+    const promises = [userPromise, productPromise];
+    Promise.all(promises)
+      .then( results =>{
+        const user = results[0].rows[0];
+        const products = results[1].rows;
+        const templateVars = { user, products };
+        res.render('index', templateVars);
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+    return app;
 });
+
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
