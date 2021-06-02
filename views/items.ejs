@@ -18,13 +18,19 @@
   <body>
     <% include partials/_header %>
     <div class="items-wrapper">
-      <div class="filter_container">
-        <label for="">Filter:</label>
 
-      </div>
+      <form class="filter_container">
+        <label for="">Filter:</label>
+        <select name="" id="">
+          <option value="price">price</option>
+        </select>
+      </form>
       <section class="items_container">
         <% for (let item in products) { %>
-          <div class="featured-items"><img src="<%= products[item].image %>" width="400px" height="400px" alt="succulent"><button><a href=""><%= products[item].name %></a></button><span>$<%= products[item].price /100 %>.00</span></div>
+          <div class="featured-items"><img src="<%= products[item].image %>" width="400px" height="400px" alt="succulent">
+            <form action="product/<%= products[item].user_id %>/<%= products[item].id %>" method="GET"><button ><%= products[item].name %></button></form>
+            <span>$<%= products[item].price /100 %>.00</span>
+          </div>
         <% } %>
       </section>
     </div>

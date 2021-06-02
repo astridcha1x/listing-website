@@ -45,7 +45,7 @@ app.use("/users", usersRoutes(db));
 // app.use("/widgets", widgetsRoutes(db));
 app.use("/items", itemRoutes(db));
 app.use("/favourites", favouriteRoutes(db));
-app.use("/product_on_sales", productOnSaleRoutes(db));
+app.use("/product", productOnSaleRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 

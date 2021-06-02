@@ -25,14 +25,22 @@ $min-margin-top: 20px;
       flex-direction: column;
       padding: $minimum-padding;
 
-      button {
-        margin-top: $min-margin-top;
-        height: 40px;
+      form {
+        text-align: center;
+        button {
+          margin-top: $min-margin-top;
+          background-color: rgb(138, 167, 117);
+          border: none;
+          color: #EEE;
+          height: 40px;
+          width: 200px;
+        }
       }
 
       span {
         margin-top: $min-margin-top;
         text-align: center;
+        color: #6b717f;
       }
 
     }
