@@ -17,13 +17,8 @@ module.exports = (db) => {
     // Promise.all(promises)
     db.query(`SELECT * FROM products`)
       .then( results =>{
-        // const user = results[0].rows[0];
-        // const products = results[1].rows;
-        // const favourites = results[2].rows;
-        // const templateVars = { user, products, favourites }
         const products = results.rows;
         templateVars = { products }
-        console.log(templateVars);
       res.render('items', templateVars);
     })
     .catch(err => {

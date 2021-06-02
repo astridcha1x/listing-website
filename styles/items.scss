@@ -1,0 +1,42 @@
+// ITEMS / PRODUCTS PAGE //
+
+$minimum-margin: 50px;
+$minimum-padding: 20px;
+$min-margin-top: 20px;
+
+.items-wrapper {
+
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  .items_container {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: $minimum-margin;
+    // padding: $minimum-padding;
+
+
+    .featured-items {
+      display: flex;
+      flex-direction: column;
+      padding: $minimum-padding;
+
+      button {
+        margin-top: $min-margin-top;
+        height: 40px;
+      }
+
+      span {
+        margin-top: $min-margin-top;
+        text-align: center;
+      }
+
+    }
+  }
+
+
+}

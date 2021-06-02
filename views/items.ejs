@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <!-- <link rel="stylesheet" href="/styles/items.css" type="text/css" /> -->
 
-        <!-- GOOGLE FONTS: Karla, Open Sans, Oswald -->
-        <link href="https://fonts.googleapis.com/css2?family=Karla&family=Open+Sans&family=Oswald&display=swap" rel="stylesheet">
+    <!-- GOOGLE FONTS: Karla, Open Sans, Oswald -->
+      <link href="https://fonts.googleapis.com/css2?family=Karla&family=Open+Sans&family=Oswald&display=swap" rel="stylesheet">
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
@@ -16,15 +17,16 @@
 
   <body>
     <% include partials/_header %>
-    <div class="wrapper">
+    <div class="items-wrapper">
       <div class="filter_container">
+        <label for="">Filter:</label>
 
       </div>
-      <section>
+      <section class="items_container">
         <% for (let item in products) { %>
-          <div class="featured-items"><img src="<%= products[item].image %>" width="100px" height="100px" alt="succulent"><button><a href=""><%= products[item].name %></a></button><span>$<%= products[item].price /100 %>.00</span></div>
+          <div class="featured-items"><img src="<%= products[item].image %>" width="400px" height="400px" alt="succulent"><button><a href=""><%= products[item].name %></a></button><span>$<%= products[item].price /100 %>.00</span></div>
         <% } %>
-        </section>
-  </div>
+      </section>
+    </div>
   </body>
 </html>

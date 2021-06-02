@@ -9,6 +9,7 @@ $regular-font: 'Open Sans', sans-serif;
 $title-font: 'Oswald', sans-serif;
 $regular-text-color: #6b717f;
 $link-color: #95a986;
+$wrapper-margin: 0 auto;
 
 body {
   font-family: $regular-font;
@@ -30,33 +31,9 @@ body {
 }
 
 // HEADER //
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+@import 'header';
 
-  div.nav-links {
-    display: flex;
-    justify-content: space-evenly;
-    padding-right: 4rem;
-    padding-top: 1rem;
-    font-family: $regular-font;
-
-      a {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-      }
-  }
-
-  p {
-    font-family: $title-font;
-  }
-}
-
-// INDEX / HOME PAGE //
+// INDEX / HOME PAGE -------------------------------------------------------//
 div.hero-container {
 
   display: flex;
@@ -98,7 +75,7 @@ div.hero-container {
 div.wrapper {
 
   max-width: 100%;
-  margin: 0 auto;
+  margin: $wrapper-margin;
   padding: 0 40px;
 
 
@@ -163,3 +140,5 @@ div.wrapper {
   }
 }
 
+// ITEMS / PRODUCTS PAGE //
+@import 'items';

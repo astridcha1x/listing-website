@@ -1,0 +1,25 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  div.nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    padding-right: 4rem;
+    padding-top: 1rem;
+    font-family: $regular-font;
+
+      a {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+  }
+
+  p {
+    font-family: $title-font;
+  }
+}
