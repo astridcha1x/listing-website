@@ -3,6 +3,7 @@
 $minimum-margin: 50px;
 $minimum-padding: 20px;
 $min-margin-top: 20px;
+$regular-text-color: #6b717f;
 
 .items-wrapper {
 
@@ -10,11 +11,24 @@ $min-margin-top: 20px;
   margin: 0 auto;
   padding: 0 40px;
 
+  .filter-container {
+    margin-left: 40px;
+    display: flex;
+
+    .filter-btn {
+      color: $regular-text-color;
+      border: none;
+      border-right: 1px solid ;
+      padding: 0 40px;
+      margin-top: 40px;
+    }
+
+  }
+
   .items_container {
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 440px);
     justify-content: space-between;
     margin: $minimum-margin;
     // padding: $minimum-padding;

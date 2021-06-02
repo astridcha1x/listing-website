@@ -14,7 +14,7 @@ module.exports = (db) => {
   router.get("/:user_id", (req, res) => { // user's page: displays user name, favourites, user's products
     const user = `SELECT * FROM users WHERE id = $1;`;
     const product = `SELECT * FROM products WHERE user_id = $1;`;
-    const favourites = `SELECT * FROM favourites JOIN products ON products.id = favourites.product_id WHERE favourites.user_id = $1;`
+    const favourites = `SELECT favourites.id as favourite_id, favourites.user_id as fav_user_id, favourites.product_id as fav_product_id, products.* FROM favourites JOIN products ON products.id = favourites.product_id WHERE favourites.user_id = $1;`
     const userPromise = db.query(user, [req.params["user_id"]]);
     const productPromise = db.query(product, [req.params["user_id"]]);
     const favouritesPromise = db.query(favourites, [req.params["user_id"]]);
@@ -34,19 +34,6 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
-
-  // router.get('/:user_id',(req, res) => {
-  //   //user's data
-  //   db.query(`SELECT * FROM users WHERE id = $1;`, [req.params["user_id"]])
-  //   .then(data => {
-  //     res.json(data.rows[0]);
-  //   })
-  //   .catch(err => {
-  //     res
-  //       .status(500)
-  //       .json({ error: err.message });
-  //   });
-  // });
 
   return router;
 

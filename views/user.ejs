@@ -32,11 +32,13 @@
       <h2>FAVOURITES</h2>
       <% for (let item in favourites) { %>
         <p><%= favourites[item].product_id %></p>
-        <p><%= favourites.user_id %></p>
-        <form method="GET" action="/product/<%= favourites[item].user_id %>/<%= favourites[item].product_id %>">
-          <!-- when user clicks button go to product page ?? -->
-          <button>button</button>
-          </form>
+        <p><%= favourites[item].user_id %></p>
+        <form method="GET" action="/product/<%= favourites[item].user_id %>/<%= favourites[item].fav_product_id %>">
+          <button>View Details</button>
+        </form>
+        <form method="POST" action="/favourites/<%= favourites[item].fav_user_id %>/delete_favourites/<%= favourites[item].favourite_id %>">
+          <button>Delete</button>
+        </form>
       <% } %>
     </div>
 
