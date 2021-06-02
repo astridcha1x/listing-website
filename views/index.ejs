@@ -39,7 +39,7 @@
           <% for (let item in products) { %>
             <div class="feature-item-wrapper">
               <div class="featured-items"><img src="<%= products[item].image %>" width="400px" height="400px" alt="succulent"></div>
-              <form class="feature-btn" action="product/<%= products[item].user_id %>/<%= products[item].id %>" method="GET"><button ><%= products[item].name %></button></form>
+              <form class="feature-btn-form" action="product/<%= products[item].user_id %>/<%= products[item].id %>" method="GET"><button ><%= products[item].name %></button></form>
             </div>
            <% } %>
       </section>
