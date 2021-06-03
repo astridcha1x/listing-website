@@ -71,7 +71,7 @@ app.get("/", (req, res) => {
     const productPromise = db.query(products);
 
     const promises = [userPromise, productPromise];
-    req.session.userID = 1;
+    // req.session.userID = 1;
     Promise.all(promises)
       .then( results =>{
         const user = results[0].rows[0];

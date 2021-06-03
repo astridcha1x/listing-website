@@ -5,6 +5,7 @@ const router  = express.Router();
 module.exports = (db) => {
 
   router.get("/:msg_master_id/:user_id", (req, res) => {
+    req.session.userID = req.params["user_id"];
     const dateStart = `SELECT date_time FROM message_master WHERE id = $1;`;
     const details = `SELECT * FROM message_details WHERE message_master_id = $1;`;
 
