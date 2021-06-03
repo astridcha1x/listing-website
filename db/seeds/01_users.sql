@@ -36,6 +36,6 @@ INSERT INTO favourites (user_id, product_id) VALUES (4, 5);
 INSERT INTO message_master (sender_id, receiver_id, date_time) VALUES (1, 2, '2021-05-27');
 
 -- message_details
-INSERT INTO message_details (sender_id, receiver_id, date_time, message_text) VALUES (1, 2, '2021-05-27', 'Hello I''m interested in your name2! Do you do meet ups by chance?');
-INSERT INTO message_details (sender_id, receiver_id, date_time, message_text) VALUES (2, 1, '2021-05-27', 'Sure! Do you want to meet up at Water-front station at 2pm tomorrow?');
-INSERT INTO message_details (sender_id, receiver_id, date_time, message_text) VALUES (1, 2, '2021-05-27', 'Okay sounds good! see you then!');
+INSERT INTO message_details (sender_id, date_time, message_text, message_master_id) VALUES (1, '2021-05-27', 'Hello I''m interested in your name2! Do you do meet ups by chance?', 1);
+INSERT INTO message_details (sender_id, date_time, message_text, message_master_id) VALUES (2, '2021-05-27', 'Sure! Do you want to meet up at Water-front station at 2pm tomorrow?', 1);
+INSERT INTO message_details (sender_id, date_time, message_text, message_master_id) VALUES (1, '2021-05-27', 'Okay sounds good! see you then!', 1);
