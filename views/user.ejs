@@ -33,10 +33,7 @@
       <section class="favourites info-container">
         <% for (let item in favourites) { %>
           <div class="fav item-container">
-            <!-- <p><%= favourites[item].fav_product_id %></p>
-            <p><%= favourites[item].user_id %></p> -->
-            <!-- <div class="featured-items"><img src="<%= products[item].image %>" width="400px" height="400px" alt="succulent"></div> -->
-            <!-- <img src="<%= favourites[item].image %>" alt=""> -->
+            <div class=""><img src="<%= favourites[item].image %>" width="140px" height="140px" alt="succulent"></div>
             <form method="GET" action="/product/<%= favourites[item].user_id %>/<%= favourites[item].fav_product_id %>">
               <button>View Details</button>
             </form>
