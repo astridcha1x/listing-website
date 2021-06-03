@@ -1,3 +1,25 @@
+// ---------- VARIABLES ---------- //
+
+// fonts //
+$regular-font: 'Open Sans', sans-serif;
+$title-font: 'Oswald', sans-serif;
+
+// colors //
+$regular-text-color: #6b717f;
+$secondary-color: #496742;
+$link-color: #95a986;
+$bg-color: #EEE;
+
+// spacing //
+$wrapper-margin: 0 auto;
+$minimum-margin: 50px;
+$minimum-padding: 20px;
+$min-margin-top: 20px;
+
+// transition //
+$fade-in: 0.3s ease-in-out;
+
+// -------------------------------- //
 
 .form-wrapper {
   max-width: 100%;
@@ -7,23 +29,27 @@
 
 .posting-container {
   display: flex;
-  justify-content: space-between;
+  margin-top: 100px;
 }
 
 .posting-form-img {
-  margin-top: 40px;
-  width: 50%;
 
   .form-img-container {
-    border: 1px solid red;
-    width: 800px;
-    height: 800px;
+    background-color: #FFF;
+    width: 720px;
+    height: 720px;
+    margin-right: 100px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
   }
 
 }
 
 .posting-form-content {
-  margin-top: 40px;
+  margin-left: 100px;
 
   .posting-input-field {
     display: flex;
@@ -31,15 +57,24 @@
 
     .textarea {
       height: 40px;
-      width: 500px;
+      width: 540px;
       margin-bottom: 24px;
       resize: none;
+      border: none;
+      border-radius: 6px;
     }
 
     .description {
       height: 100px;
     }
 
+    button {
+      margin-top: 20px;
+      height: 40px;
+      border: none;
+      border-radius: 6px;
+      background-color: $bg-color;
+    }
   }
 
 }

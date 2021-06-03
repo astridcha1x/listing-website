@@ -1,10 +1,6 @@
 // See: https://sass-lang.com/ //
 
-/*
-- Sass uses $ to make something a variable
-*/
-
-// VARIABLES //
+// ---------- VARIABLES ---------- //
 
 // fonts //
 $regular-font: 'Open Sans', sans-serif;
@@ -18,13 +14,21 @@ $bg-color: #EEE;
 
 // spacing //
 $wrapper-margin: 0 auto;
+$minimum-margin: 50px;
+$minimum-padding: 20px;
+$min-margin-top: 20px;
+
+// transition //
+$fade-in: 0.3s ease-in-out;
+
+// -------------------------------- //
 
 body {
   font-family: $regular-font;
   background-color: $bg-color;
   color: $regular-text-color;
 
-  // PAGE ANIMATION //
+  // PAGES ANIMATION //
 
   animation: fadeInAnimation ease 1s;
   animation-iteration-count: 1;
@@ -135,7 +139,7 @@ div.wrapper {
         width: 100%;
 
         button {
-          background-color: #98b89182;
+          background-color: $secondary-color;
           margin: 16px 0;
           width: 100%;
           height: 52px;
@@ -143,7 +147,7 @@ div.wrapper {
           border: none;
         }
         button:hover {
-          background-color: #98b891bb;
+          background-color: $regular-text-color;
         }
       }
     }
@@ -160,7 +164,7 @@ div.wrapper {
 
       text-align: center;
       width: 50%;
-      background-color: #98b89182;
+      background-color: $secondary-color;
       border-radius: 8px 0 0 8px;
       padding: 40px;
 

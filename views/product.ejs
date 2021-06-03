@@ -23,14 +23,17 @@
 
       <div class="product-page-content">
     <section class="product-img-container">
-    <img class= "product-img" src="https://images.unsplash.com/photo-1508022713622-df2d8fb7b4cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1275&q=80" width="600px" height="700px">
+    <!-- <img class= "product-img" src="https://images.unsplash.com/photo-1508022713622-df2d8fb7b4cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1275&q=80" width="600px" height="700px"> -->
+    <img class="product-img" src="<%= products.image %>" width= 600px height="700px" alt="item-img">
     </section>
 
     <section class="product-info-container">
 
       <div class="product-info">
-        <h1>Product</h1>
-          <h2>$<%= products.price / 100 %>.00</h2>
+        <h1><%= products.name%></h1>
+          <h2 class="<% if (products.quantity === 0) { %>
+            return ``;
+          <% } else { } %>">$<%= products.price / 100 %>.00 <span>SOLD OUT</span></h2>
             <p><%= products.description%></p>
             <p><%= user.image %></p>
             <p class="username"><%= user.name %></p>
