@@ -30,10 +30,8 @@ module.exports = (db) => {
 
     // delete product from user's listing
     router.post('/:seller_id/:product_id/delete',(req, res) => {
-      console.log("test: ",req.params["user_id"],req.params["product_id"]);
       db.query(`DELETE FROM products WHERE user_id = $1 AND id = $2;`, [req.params["seller_id"],req.params["product_id"]])
       .then( results => {
-        console.log('test: ', results);
         res.redirect(`/users/${req.params["seller_id"]}`)
       })
       .catch(err => {
@@ -42,6 +40,21 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
     });
+
+
+    // router.post('/sold/:seller_id/:product_id/',(req, res) => {
+    //   $(document).ready( function() {
+    //     $("#span").show();
+    //   })
+    //   // .then( results => {
+    //   //   res.redirect(`/users/${req.params["seller_id"]}`)
+    //   // })
+    //   .catch(err => {
+    //     res
+    //       .status(500)
+    //       .json({ error: err.message });
+    //   });
+    // });
 
 
     return router;

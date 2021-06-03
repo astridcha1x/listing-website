@@ -11,9 +11,13 @@ $link-color: #95a986;
 $bg-color: #EEE;
 
 // spacing //
+$wrapper-margin: 0 auto;
 $minimum-margin: 50px;
 $minimum-padding: 20px;
 $min-margin-top: 20px;
+
+// transition //
+$fade-in: 0.3s ease-in-out;
 
 // -------------------------------- //
 
@@ -45,19 +49,19 @@ $min-margin-top: 20px;
     color: $bg-color;
     height: 50px;
     width: 50px;
-    transition: 0.3s ease-in-out;
+    transition: $fade-in;
   }
 
   button.favourite-btn:hover {
     background-color: $secondary-color;
     color: #FFF;
-    transition: 0.3s ease-in-out;
+    transition: $fade-in;
   }
 
   .product-wrapper {
 
     max-width: 100%;
-    margin: 0 auto;
+    margin: $wrapper-margin;
     padding: 0 40px;
 
     .product-page-content {
@@ -79,7 +83,7 @@ $min-margin-top: 20px;
         color: $link-color;
         position: relative;
         display: inline-block;
-        transition: 0.3s ease-in-out;
+        transition: $fade-in;
       }
 
       p.username:before {
@@ -101,7 +105,7 @@ $min-margin-top: 20px;
 
       p.username:hover {
         color: $secondary-color;
-        transition: 0.3s ease-in-out;
+        transition: $fade-in;
       }
 
       .button-container {
