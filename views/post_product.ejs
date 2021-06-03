@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Make a Post</title>
+    <title>Home Page</title>
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -23,10 +23,15 @@
       </section>
 
       <section>
-        <form action="/action_page.php" id="form1">
-          Product Name: <input type="text" name="product_name">
-          Price: <input type="text" name="product_price">
-          desc: <input type="text">
+        <form action="/posting/new_post" method="POST" id="form1">
+          Product Name: <input type="text" name="name">
+          Price: <input type="text" name="price">
+          desc: <input type="text" name="desc">
+          img: <input type="text" name="img">
+          type: <input type="text" name="type">
+          quantity: <input type="text" name="qty">
+          user_id: <input type="text" name="user_id">
+
           <input type="submit" >
         </form>
 
