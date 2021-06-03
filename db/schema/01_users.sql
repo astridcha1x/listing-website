@@ -68,7 +68,7 @@ DROP TABLE IF EXISTS message_details CASCADE;
 CREATE TABLE message_details (
   id SERIAL PRIMARY KEY NOT NULL,
   sender_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  receiver_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   date_time DATE NOT NULL,
-  message_text TEXT NOT NULL
+  message_text TEXT NOT NULL,
+  message_master_id INTEGER REFERENCES message_master(id) ON DELETE CASCADE
 );

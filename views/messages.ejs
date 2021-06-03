@@ -7,17 +7,26 @@
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/messages.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
 
   <title>Messages</title>
 </head>
 
 <body>
-  <article>
-    <!-- functions in messages.js -->
-  </article>
-  <div id="test"></div>
+  <p><%= date_start[0].date_time %></p>
+  <p><%= message[0].message_text %></p>
+  <% for (let i = 0; i < message.length; i++) { %>
+      <p><%= message[i].message_text %></p>
+  <% } %>
+  <section id="msgHistory">
+  </section>
+
+  <section id="sentMessages">
+      <!-- functions in messages.js -->
+  </section>
+
     <form id="chatbox">
-      <textarea id="textbox" placeholder="Send a message"></textarea>
+        <textarea id="textbox" placeholder="Send a message"></textarea>
       <button id="sendtext">SUBMIT</button>
   </form>
 </body>
