@@ -18,25 +18,27 @@
     <% include partials/_header %>
     <div class="form-wrapper">
 
-      <section>
-        <img src="" alt="">
+      <div class="posting-container">
+
+      <section class="posting-form-img">
+        <div class="form-img-container"></div>
       </section>
 
-      <section>
-        <form action="/posting/new_post" method="POST" id="form1">
-          Product Name: <input type="text" name="name">
-          Price: <input type="text" name="price">
-          desc: <input type="text" name="desc">
-          img: <input type="text" name="img">
-          type: <input type="text" name="type">
-          quantity: <input type="text" name="qty">
-          user_id: <input type="text" name="user_id">
-
-          <input type="submit" >
+      <section class="posting-form-content">
+        <form class="posting-input-field" action="/posting/new_post" method="POST" id="form1">
+          Image URL: <input class="textarea" type="text" name="img">
+          Product Name: <input class="textarea" type="text" name="name">
+          Price: <input class="textarea" type="text" name="price">
+          Description: <textarea class="textarea description" type="text" name="desc"></textarea>
+          Type: <input class="textarea" type="text" name="type">
+          Quantity: <input class="textarea" type="text" name="qty">
+          Seller ID: <input class="textarea" type="text" name="user_id">
+          <button type="submit">SUBMIT</button>
         </form>
 
-        <!-- <textarea name="comment" form="usrform">Enter text here...</textarea> -->
       </section>
+
+      </div>
 
     </div>
 

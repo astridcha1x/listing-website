@@ -13,7 +13,6 @@ module.exports = (db) => {
     const productQty = Number(req.body.qty);
     const productUserId = req.session.userID;
 
-    console.log("results: ", productPrice, productQty, productUserId);
     db.query(`INSERT INTO products (name, price, description, image, type, quantity, user_id) VALUES ($1, $2, $3, $4, $5, $6, $7)`, [productName, productPrice, productDesc, productImg, productType, productQty, productUserId])
     .then(results => {
       res.redirect(`/users/${productUserId}`);

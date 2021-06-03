@@ -1,0 +1,45 @@
+
+.form-wrapper {
+  max-width: 100%;
+  margin: 0 90px;
+  padding: 0 40px;
+}
+
+.posting-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.posting-form-img {
+  margin-top: 40px;
+  width: 50%;
+
+  .form-img-container {
+    border: 1px solid red;
+    width: 800px;
+    height: 800px;
+  }
+
+}
+
+.posting-form-content {
+  margin-top: 40px;
+
+  .posting-input-field {
+    display: flex;
+    flex-direction: column;
+
+    .textarea {
+      height: 40px;
+      width: 500px;
+      margin-bottom: 24px;
+      resize: none;
+    }
+
+    .description {
+      height: 100px;
+    }
+
+  }
+
+}
