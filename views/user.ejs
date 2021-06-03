@@ -19,44 +19,52 @@
     <% include partials/_header %>
 
     <!-- HERO SECTION -->
-    <div class="hero-section">
+    <div class="user-hero-section">
       <img src="" alt="">
-      <div class="hero-username">
+      <div class="user-hero-username">
         <span><%= user.name %></span>
         <p>bio</p>
       </div>
     </div>
 
+    <div class="user-info-wrapper">
     <!-- FAVOURITES SECTION -->
-    <div class="favourites">
-      <h2>FAVOURITES</h2>
-      <% for (let item in favourites) { %>
-        <p><%= favourites[item].product_id %></p>
-        <p><%= favourites[item].user_id %></p>
-        <form method="GET" action="/product/<%= favourites[item].user_id %>/<%= favourites[item].fav_product_id %>">
-          <button>View Details</button>
-        </form>
-        <form method="POST" action="/favourites/<%= favourites[item].fav_user_id %>/delete_favourites/<%= favourites[item].favourite_id %>">
-          <button>Delete</button>
-        </form>
-      <% } %>
-    </div>
+    <h2>FAVOURITES</h2>
+      <section class="favourites info-container">
+        <% for (let item in favourites) { %>
+          <div class="fav item-container">
+            <!-- <p><%= favourites[item].fav_product_id %></p>
+            <p><%= favourites[item].user_id %></p> -->
+            <!-- <div class="featured-items"><img src="<%= products[item].image %>" width="400px" height="400px" alt="succulent"></div> -->
+            <!-- <img src="<%= favourites[item].image %>" alt=""> -->
+            <form method="GET" action="/product/<%= favourites[item].user_id %>/<%= favourites[item].fav_product_id %>">
+              <button>View Details</button>
+            </form>
+            <form method="POST" action="/favourites/<%= favourites[item].fav_user_id %>/delete_favourites/<%= favourites[item].favourite_id %>">
+              <button>Delete</button>
+            </form>
+          </div>
+        <% } %>
+        </section>
 
-    <!-- USER LISTING SECTION -->
-    <div class="user-listing">
+      <!-- USER LISTING SECTION -->
       <h2>USER LISTINGS</h2>
-      <% for (let product in products) { %>
+      <section class="user-listing info-container">
+        <% for (let product in products) { %>
+          <div class="fav item-container">
             <p><%= products[product].name %></p>
             <form method="GET" action="/product_on_sales/<%= products[product].user_id %>/<%= products[product].name %>">
               <button>
               </button>
             </form>
-      <% } %>
-    </div>
+          </div>
+        <% } %>
+
+      </section>
     <!-- <td><form method="POST" action= "/:user_id/delete_favourites">
       <button id="fav_delete" class= "btn btn-outline-primary" type="submit">delete</button>
     </form></td> -->
-
+  </div>
   </body>
 </html>
 </html>
