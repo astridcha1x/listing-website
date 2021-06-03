@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <!-- <link rel="stylesheet" href="/styles/items.css" type="text/css" /> -->
 
     <!-- GOOGLE FONTS: Karla, Open Sans, Oswald -->
       <link href="https://fonts.googleapis.com/css2?family=Karla&family=Open+Sans&family=Oswald&display=swap" rel="stylesheet">
@@ -17,35 +16,41 @@
 
   <body>
     <% include partials/_header %>
+
     <div class="items-wrapper">
+
       <section class="filter-container">
-      <form action="/items/all" method="GET" class="filter_container">
-        <button class="filter-btn" type="submit">All items</button>
-      </form>
-      <form action="/items/below20" method="GET" class="filter_container">
-        <button class="filter-btn" type="submit">$20 & Below</button>
-      </form>
-      <form action="/items/2040" method="GET" class="filter_container">
-        <button class="filter-btn" type="submit">$20 - $40</button>
-      </form>
-      <form action="/items/above40" method="GET" class="filter_container">
-        <button class="filter-btn" type="submit">$40 & Above</button>
-      </form>
-      <form action="/items/indoor" method="GET" class="filter_container">
-        <button class="filter-btn" type="submit">Type: Indoor</button>
-      </form>
-      <form action="/items/outdoor" method="GET" class="filter_container">
-        <button class="filter-btn" type="submit">Type: Outdoor</button>
-      </form>
+
+        <form action="/items/all" method="GET" class="filter_container">
+          <button id="first" class="filter-btn" type="submit">All items</button>
+        </form>
+
+
+        <!-- FILTER ITEMS -->
+        <form action="/items/below20" method="GET" class="filter_container">
+          <button class="filter-btn" type="submit">$20 & Below</button>
+        </form>
+        <form action="/items/2040" method="GET" class="filter_container">
+          <button class="filter-btn" type="submit">$20 - $40</button>
+        </form>
+        <form action="/items/above40" method="GET" class="filter_container">
+          <button class="filter-btn" type="submit">$40 & Above</button>
+        </form>
+        <form action="/items/indoor" method="GET" class="filter_container">
+          <button class="filter-btn" type="submit">Type: Indoor</button>
+        </form>
+        <form action="/items/outdoor" method="GET" class="filter_container">
+          <button class="filter-btn" type="submit">Type: Outdoor</button>
+        </form>
 
       </section>
       <section class="items_container">
         <% for (let item in products) { %>
-          <div class="featured-items"><img src="<%= products[item].image %>" width="400px" height="400px" alt="succulent">
+          <div class="featured-items"><img src="<%= products[item].image %>" alt="succulent">
             <form action="/product/<%= products[item].user_id %>/<%= products[item].id %>" method="GET"><button ><%= products[item].name %></button></form>
             <span>$<%= products[item].price /100 %>.00</span>
             <% if (products[item].quantity === 0) { %>
-              <p>SOLD OUT</p>
+              <p class="sold-out">SOLD OUT</p>
             <% } %>
           </div>
         <% } %>

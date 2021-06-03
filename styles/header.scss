@@ -29,6 +29,10 @@ nav {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 
+  .title {
+    font-family: $title-font;
+  }
+
   div.nav-links {
     display: flex;
     justify-content: space-evenly;

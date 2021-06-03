@@ -27,7 +27,7 @@ module.exports = (db) => {
   router.post('/:user_id/:product_id',(req, res) => {
     db.query(`INSERT INTO favourites (user_id, product_id) VALUES ($1, $2)`, [req.params["user_id"],req.params["product_id"]])
     .then(data => {
-      res.json(data.rows[0]);
+      res.redirect(`/users/${req.params["user_id"]}`);
     })
     .catch(err => {
       res
