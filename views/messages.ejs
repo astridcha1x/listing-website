@@ -16,7 +16,7 @@
   <%- include partials/_header %>
   <section id="msgHistory">
     <% for (let i = 0; i < message.length; i++) { %>
-      <p><%= message[i].sender_id %></p>
+      <p><%= message[i].name %></p>
       <p><%= message[i].message_text %></p>
       <hr class="line">
       <p><%= message[i].date_time %></p>

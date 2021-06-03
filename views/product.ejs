@@ -42,20 +42,18 @@
             <p class="username"><%= user.name %></p>
       </div>
 
-      <section class="button-container">
-          <form action="/" method="GET"><button class="purchase-btn">
-            CONTACT SELLER
-          </button></form>
-        <form action="/favourites/1/<%= products.id %>" method="POST">
-          <button class="favourite-btn">
-            <i class="fas fa-heart"></i>
-          </button>
-        </form>
-      </section>
+      <div class="button-container">
+        <form action="/messages/1/<%= user.id %>" method="GET"><button class="purchase-btn">
+          CONTACT SELLER
+        </button></form>
+      <form action="/favourites/1/<%= products.id %>" method="POST">
+        <button class="favourite-btn">
+          <i class="fas fa-heart"></i>
+        </button>
+      </form>
+    </div>
 
-     </section>
-
-     </div>
+  </section>
 
      </div>
   </body>

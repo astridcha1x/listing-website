@@ -28,7 +28,6 @@ module.exports = (db) => {
     db.query(`INSERT INTO favourites (user_id, product_id) VALUES ($1, $2)`, [req.params["user_id"],req.params["product_id"]])
     .then(data => {
       res.redirect(`/users/${req.params["user_id"]}`);
-      // res.json(data.rows[0]);
     })
     .catch(err => {
       res

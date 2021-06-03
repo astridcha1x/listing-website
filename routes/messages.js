@@ -7,7 +7,8 @@ module.exports = (db) => {
   router.get("/:msg_master_id/:user_id", (req, res) => {
     req.session.userID = req.params["user_id"];
     const dateStart = `SELECT date_time FROM message_master WHERE id = $1;`;
-    const details = `SELECT * FROM message_details WHERE message_master_id = $1;`;
+    const details = `SELECT message_details.* , users.name as name FROM message_details JOIN users ON users.id = sender_id WHERE message_master_id = $1;`;
+
 
     const messageStartPromise = db.query(dateStart, [req.params["msg_master_id"]]);
     const detailsPromise = db.query(details, [req.params["msg_master_id"]]);
@@ -19,6 +20,7 @@ module.exports = (db) => {
         const date_start = results[0].rows[0].date_time;
         console.log("dateStart: ", date_start);
         const message = results[1].rows;
+        console.log("message: ", message);
         const templateVars = {date_start, message};
 
         res.render('messages', templateVars);

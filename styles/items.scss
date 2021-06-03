@@ -9,6 +9,7 @@ $title-font: 'Oswald', sans-serif;
 // colors //
 $regular-text-color: #6b717f;
 $secondary-color: #496742;
+$accent-color: #BC8896;
 $link-color: #95a986;
 $bg-color: #EEE;
 
@@ -30,15 +31,23 @@ $fade-in: 0.3s ease-in-out;
   padding: 0 40px;
 
   .filter-container {
-    margin-left: 40px;
     display: flex;
+    justify-content: center;
+    margin-left: 40px;
 
+    #first {
+      border-left: 1px solid;
+      font-family: $title-font;
+      color: $accent-color;
+    }
     .filter-btn {
-      color: $regular-text-color;
       border: none;
-      border-right: 1px solid ;
+      border-right: 1px solid;
       padding: 0 40px;
       margin-top: 40px;
+      font-family: $title-font;
+      color: $accent-color;
+
     }
 
   }
@@ -49,24 +58,43 @@ $fade-in: 0.3s ease-in-out;
     grid-template-columns: repeat(auto-fit, 440px);
     justify-content: space-between;
     margin: $minimum-margin;
-    // padding: $minimum-padding;
-
 
     .featured-items {
+
       display: flex;
       flex-direction: column;
       padding: $minimum-padding;
+
+      img {
+        object-fit: cover;
+        width: 400px;
+        height: 400px;
+      }
+
+      .sold-out {
+        font-family: $title-font;
+        text-align: center;
+        color: $accent-color;
+      }
 
       form {
         text-align: center;
         button {
           margin-top: $min-margin-top;
-          background-color: rgb(138, 167, 117);
           border: none;
-          color: #EEE;
+          background-color: $link-color;
+          color: $bg-color;
           height: 40px;
           width: 200px;
+          transition: $fade-in;
         }
+
+        button:hover {
+          background-color: $secondary-color;
+          color: #FFF;
+          transition: $fade-in;
+        }
+
       }
 
       span {
