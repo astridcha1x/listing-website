@@ -41,20 +41,18 @@ module.exports = (db) => {
       });
     });
 
-
-    // router.post('/sold/:seller_id/:product_id/',(req, res) => {
-    //   $(document).ready( function() {
-    //     $("#span").show();
-    //   })
-    //   // .then( results => {
-    //   //   res.redirect(`/users/${req.params["seller_id"]}`)
-    //   // })
-    //   .catch(err => {
-    //     res
-    //       .status(500)
-    //       .json({ error: err.message });
-    //   });
-    // });
+    // Quantity goes 0 and sold out message displays on product page
+    router.post('/sold/:seller_id/:product_id/',(req, res) => {
+      db.query(`UPDATE products SET quantity = 0 WHERE id = $1`,[req.params["product_id"]])
+      .then( results => {
+        res.redirect(`/users/${req.params["seller_id"]}`)
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+    });
 
 
     return router;

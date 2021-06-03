@@ -57,6 +57,9 @@
             <form method="POST" action="/product/<%= products[item].user_id %>/<%= products[item].id %>/delete">
               <button>Delete Product</button>
             </form>
+            <form method="POST" action="/product/sold/<%= products[item].user_id %>/<%= products[item].id %>">
+              <button>Sold Out</button>
+            </form>
           </div>
         <% } %>
 

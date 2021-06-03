@@ -31,9 +31,12 @@
 
       <div class="product-info">
         <h1><%= products.name%></h1>
-          <h2 class="<% if (products.quantity === 0) { %>
-            return ``;
-          <% } else { } %>">$<%= products.price / 100 %>.00 <span>SOLD OUT</span></h2>
+          <h2>$<%= products.price / 100 %>.00</h2>
+
+            <% if (products.quantity === 0) { %>
+              <p>SOLD OUT</p>
+            <% } %>
+
             <p><%= products.description%></p>
             <p><%= user.image %></p>
             <p class="username"><%= user.name %></p>
