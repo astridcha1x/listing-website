@@ -1,0 +1,118 @@
+// ---------- VARIABLES ---------- //
+
+// fonts //
+$regular-font: 'Open Sans', sans-serif;
+$title-font: 'Oswald', sans-serif;
+
+// colors //
+$regular-text-color: #6b717f;
+$secondary-color: #496742;
+$link-color: #95a986;
+$bg-color: #EEE;
+
+// spacing //
+$minimum-margin: 50px;
+$minimum-padding: 20px;
+$min-margin-top: 20px;
+
+// -------------------------------- //
+
+  h1 {
+    font-family: $title-font;
+    color: $secondary-color;
+  }
+
+  button.purchase-btn {
+    border: none;
+    margin-top: $min-margin-top;
+    background-color: $link-color;
+    color: $bg-color;
+    height: 50px;
+    width: 400px;
+    transition: 0.3s ease-in-out;
+  }
+
+  button.purchase-btn:hover {
+    background-color: $secondary-color;
+    color: #FFF;
+    transition: 0.3s ease-in-out;
+  }
+
+  button.favourite-btn {
+    border: none;
+    margin-top: $min-margin-top;
+    background-color: $link-color;
+    color: $bg-color;
+    height: 50px;
+    width: 50px;
+    transition: 0.3s ease-in-out;
+  }
+
+  button.favourite-btn:hover {
+    background-color: $secondary-color;
+    color: #FFF;
+    transition: 0.3s ease-in-out;
+  }
+
+  .product-wrapper {
+
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+
+    .product-page-content {
+      display: flex;
+    }
+
+    .product-img-container {
+      margin: $minimum-margin;
+    }
+
+    .product-info-container {
+      display: flex;
+      flex-direction: column;
+      margin: $minimum-margin;
+
+      p.username {
+        font-family: $title-font;
+        font-size: 24px;
+        color: $link-color;
+        position: relative;
+        display: inline-block;
+        transition: 0.3s ease-in-out;
+      }
+
+      p.username:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        right: 0;
+        background-color: $secondary-color;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+      }
+
+      p.username:hover:before {
+        visibility: visible;
+        width: 100%;
+      }
+
+      p.username:hover {
+        color: $secondary-color;
+        transition: 0.3s ease-in-out;
+      }
+
+      .button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: $minimum-margin;
+        width: 475px;
+      }
+
+    }
+
+}
+
