@@ -5,16 +5,39 @@
 */
 
 // VARIABLES //
+
+// fonts //
 $regular-font: 'Open Sans', sans-serif;
 $title-font: 'Oswald', sans-serif;
+
+// colors //
 $regular-text-color: #6b717f;
+$secondary-color: #496742;
 $link-color: #95a986;
+$bg-color: #EEE;
+
+// spacing //
 $wrapper-margin: 0 auto;
 
 body {
   font-family: $regular-font;
-  background-color: #EEE;
+  background-color: $bg-color;
   color: $regular-text-color;
+
+  // PAGE ANIMATION //
+
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
 
   h1 {
     font-family: $title-font;
@@ -164,3 +187,6 @@ div.wrapper {
 
 // USERS / USER PAGE //
 @import 'user';
+
+// PRODUCT PAGE //
+@import 'product';

@@ -38,7 +38,7 @@
               <button>View Details</button>
             </form>
             <form method="POST" action="/favourites/<%= favourites[item].fav_user_id %>/delete_favourites/<%= favourites[item].favourite_id %>">
-              <button>Delete</button>
+              <button>Remove</button>
             </form>
           </div>
         <% } %>
@@ -47,12 +47,15 @@
       <!-- USER LISTING SECTION -->
       <h2>USER LISTINGS</h2>
       <section class="user-listing info-container">
-        <% for (let product in products) { %>
+        <% for (let item in products) { %>
           <div class="fav item-container">
-            <p><%= products[product].name %></p>
-            <form method="GET" action="/product_on_sales/<%= products[product].user_id %>/<%= products[product].name %>">
-              <button>
-              </button>
+            <p><%= products[item].name %></p>
+            <div><img src="<%= products[item].image %>" width="140px" height="140px" alt="succulent"></div>
+            <form method="GET" action="/product/<%= products[item].user_id %>/<%= products[item].id %>">
+              <button>View details</button>
+            </form>
+            <form method="POST" action="/product/<%= products[item].user_id %>/<%= products[item].id %>/delete">
+              <button>Delete Product</button>
             </form>
           </div>
         <% } %>
