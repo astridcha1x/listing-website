@@ -2,13 +2,15 @@
 require('dotenv').config();
 
 // Web server config
-const PORT       = process.env.PORT || 8080;
-const ENV        = process.env.ENV || "development";
-const express    = require("express");
-const bodyParser = require("body-parser");
-const sass       = require("node-sass-middleware");
-const app        = express();
-const morgan     = require('morgan');
+const PORT           = process.env.PORT || 8080;
+const ENV            = process.env.ENV || "development";
+const express        = require("express");
+const bodyParser     = require("body-parser");
+const cookieSession  = require("cookie-session");
+const cookieParser   = require("cookie-parser");
+const sass           = require("node-sass-middleware");
+const app            = express();
+const morgan         = require('morgan');
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -30,6 +32,12 @@ app.use("/styles", sass({
   outputStyle: 'expanded'
 }));
 app.use(express.static("public"));
+app.use(cookieParser());
+app.use(cookieSession({
+  name: "ourcookie",
+  keys: ["key1", "key2"]
+}));
+
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
@@ -43,7 +51,6 @@ const messagesRoutes = require("./routes/messages");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/users", usersRoutes(db));
-// app.use("/widgets", widgetsRoutes(db));
 app.use("/items", itemRoutes(db));
 app.use("/favourites", favouriteRoutes(db));
 app.use("/product", productOnSaleRoutes(db));
@@ -56,7 +63,7 @@ app.use("/messages", messagesRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
-  console.log("fire");
+  req.session.userID = 1;
   res.render("index");
 });
 

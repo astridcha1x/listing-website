@@ -20,11 +20,16 @@ module.exports = (db) => {
     const promises = [userPromise, productPromise, favouritesPromise];
     Promise.all(promises)
       .then( results =>{
+
         const user = results[0].rows[0];
         const products = results[1].rows;
         const favourites = results[2].rows;
         const templateVars = { user, products, favourites };
-        // res.json({user,products,favourites});
+
+        res.cookie("user1", user);
+        console.log("1. ", results[0].rows[0]);
+        res.cookie("user2", user);
+
         res.render('user', templateVars);
       })
       .catch(err => {

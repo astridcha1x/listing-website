@@ -4,7 +4,7 @@ $(document).ready(() => {
     const html = `
       <div class="text">
         ${messageData.sender_id}<br>
-        <p>${messageData.message_text}</p><br>
+        <p>${messageData.message_text}</p>
         <hr class="line">
         ${timeago.format(messageData.created_at)}
       </div>
@@ -17,12 +17,9 @@ $(document).ready(() => {
     ev.preventDefault();
     const message = $("#textbox").val();
 
-    $.post("/messages/1", {message})
+    $.post("/messages/messages", {message})
 
     .then(data => {
-      // const text = data.message_text;
-      // console.log("data: ", data);
-      // console.log("text: ", text);
       const html = sendMessage(data);
       $("#sentMessages").append(html);
     })
@@ -40,8 +37,5 @@ $(document).ready(() => {
   //   })
   // };
 
-  // setInterval(() => {
-
-  // })
 
 });
