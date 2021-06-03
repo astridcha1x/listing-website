@@ -44,6 +44,9 @@
           <div class="featured-items"><img src="<%= products[item].image %>" width="400px" height="400px" alt="succulent">
             <form action="/product/<%= products[item].user_id %>/<%= products[item].id %>" method="GET"><button ><%= products[item].name %></button></form>
             <span>$<%= products[item].price /100 %>.00</span>
+            <% if (products[item].quantity === 0) { %>
+              <p>SOLD OUT</p>
+            <% } %>
           </div>
         <% } %>
       </section>
