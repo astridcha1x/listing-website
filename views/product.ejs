@@ -7,17 +7,49 @@
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
+    <!-- GOOGLE FONTS: Karla, Open Sans, Oswald -->
+    <link href="https://fonts.googleapis.com/css2?family=Karla&family=Open+Sans&family=Oswald&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
 
   <body>
     <% include partials/_header %>
-    <h1>Product</h1>
-    <h2><%= products.price %></h2>
-    <p><%= products.description%></p>
-    <p><%= user.image %></p>
-    <p><%= user.name %></p>
+    <div class="product-wrapper">
 
+      <div class="product-page-content">
+    <section class="product-img-container">
+    <img class= "product-img" src="https://images.unsplash.com/photo-1508022713622-df2d8fb7b4cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1275&q=80" width="600px" height="700px">
+    </section>
+
+    <section class="product-info-container">
+
+      <div class="product-info">
+        <h1>Product</h1>
+          <h2>$<%= products.price / 100 %>.00</h2>
+            <p><%= products.description%></p>
+            <p><%= user.image %></p>
+            <p class="username"><%= user.name %></p>
+      </div>
+
+      <section class="button-container">
+          <form action="/" method="GET"><button class="purchase-btn">
+            CONTACT SELLER
+          </button></form>
+          <button class="favourite-btn">
+            <i class="fas fa-heart"></i>
+          </button>
+      </section>
+
+     </section>
+
+     </div>
+
+     </div>
   </body>
 </html>
+

@@ -5,17 +5,25 @@ const router  = express.Router();
 module.exports = (db) => {
 
   // print all items
-  router.get('/',(req, res) => {
-    // const user = `SELECT * FROM users WHERE id = $1;`;
-    // const product = `SELECT * FROM products WHERE user_id = $1;`;
-    // const favourites = `SELECT * FROM favourites JOIN products ON products.id = favourites.product_id WHERE favourites.user_id = $1;`
-    // const userPromise = db.query(user, [req.params["user_id"]]);
-    // const productPromise = db.query(product, [req.params["user_id"]]);
-    // const favouritesPromise = db.query(favourites, [req.params["user_id"]]);
-    // const promises = [userPromise, productPromise, favouritesPromise];
+  router.get('/:type',(req, res) => {
+    let type = req.params.type;
+    let queryString = '';
 
-    // Promise.all(promises)
-    db.query(`SELECT * FROM products`)
+    if (type === 'all') {
+      queryString += `SELECT * FROM products;`;
+    } else if (type === 'below20') {
+      queryString += `SELECT * FROM products WHERE price >= 0 AND price <= 2000;`;
+    } else if (type === '2040') {
+      queryString += `SELECT * FROM products WHERE price >= 2000 AND price <= 4000;`;
+    } else if (type === 'above40') {
+      queryString += `SELECT * FROM products WHERE price >= 4000;`;
+    } else if (type === 'indoor') {
+      queryString += `SELECT * FROM products WHERE type = 'indoor';`;
+    } else if (type === 'outdoor') {
+      queryString += `SELECT * FROM products WHERE type = 'outdoor';`;
+    }
+
+    db.query(queryString)
       .then( results =>{
         const products = results.rows;
         templateVars = { products }

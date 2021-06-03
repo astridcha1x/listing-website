@@ -1,0 +1,61 @@
+
+
+.user-info-wrapper {
+  max-width: 100%;
+  margin: $wrapper-margin;
+  padding: 0 40px;
+
+  h2 {
+    font-family: $title-font;
+      font-size: 24px;
+      text-align: center;
+  }
+
+}
+
+// USER HERO SECTION / image, username, bio
+.user-hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  background-color: #496742;
+
+  .user-hero-username {
+    span {
+      margin-bottom: 0;
+      letter-spacing: 10px;
+      font-family: $title-font;
+      font-size: 60px;
+      color: #FFF;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    p {
+      text-align: center;
+      color: #FFF;
+
+    }
+
+  }
+}
+
+// FAVOURITES & USER LISTINGS / fav'd items //
+
+.info-container {
+  height: 340px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding: 40px;
+  background-color: #98b89182;
+
+  .fav {
+    padding: 20px;
+    margin-right: 40px;
+    background-color: #FFF;
+  }
+
+}

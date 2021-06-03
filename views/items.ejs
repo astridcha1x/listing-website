@@ -18,17 +18,31 @@
   <body>
     <% include partials/_header %>
     <div class="items-wrapper">
-
-      <form class="filter_container">
-        <label for="">Filter:</label>
-        <select name="" id="">
-          <option value="price">price</option>
-        </select>
+      <section class="filter-container">
+      <form action="/items/all" method="GET" class="filter_container">
+        <button class="filter-btn" type="submit">All items</button>
       </form>
+      <form action="/items/below20" method="GET" class="filter_container">
+        <button class="filter-btn" type="submit">$20 & Below</button>
+      </form>
+      <form action="/items/2040" method="GET" class="filter_container">
+        <button class="filter-btn" type="submit">$20 - $40</button>
+      </form>
+      <form action="/items/above40" method="GET" class="filter_container">
+        <button class="filter-btn" type="submit">$40 & Above</button>
+      </form>
+      <form action="/items/indoor" method="GET" class="filter_container">
+        <button class="filter-btn" type="submit">Type: Indoor</button>
+      </form>
+      <form action="/items/outdoor" method="GET" class="filter_container">
+        <button class="filter-btn" type="submit">Type: Outdoor</button>
+      </form>
+
+      </section>
       <section class="items_container">
         <% for (let item in products) { %>
           <div class="featured-items"><img src="<%= products[item].image %>" width="400px" height="400px" alt="succulent">
-            <form action="product/<%= products[item].user_id %>/<%= products[item].id %>" method="GET"><button ><%= products[item].name %></button></form>
+            <form action="/product/<%= products[item].user_id %>/<%= products[item].id %>" method="GET"><button ><%= products[item].name %></button></form>
             <span>$<%= products[item].price /100 %>.00</span>
           </div>
         <% } %>

@@ -5,14 +5,17 @@ const router  = express.Router();
 module.exports = (db) => {
 
   // delete new favourites to db - LOOK INTO LATER
-  router.post('/:user_id/delete_favourites', () => {
-    db.query(`DELETE FROM favourites WHERE user_id = $1 AND product_id = $2`, [req.params["user_id"], req.body['fav_delete']]) // fav_delete: in user.ejs file, <button><input name='fav_delete'>
+  router.post('/:user_id/delete_favourites/:favourite_id', (req, res) => {
+
+    db.query(`DELETE FROM favourites WHERE user_id = $1 AND id = $2`, [req.params["user_id"], req.params["favourite_id"]]) // fav_delete: in user.ejs file, <button><input name='fav_delete'>
     .then( results => {
-      res.json(results.rows[0]);
-      res.redirect('/')
+      console.log("res: ", results)
+      // res.json(results.rows[0]);
+      res.redirect(`/users/${req.params["user_id"]}`)
       // res.json(data.rows);
     })
     .catch(err => {
+
       res
         .status(500)
         .json({ error: err.message });

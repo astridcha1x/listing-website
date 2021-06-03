@@ -30,9 +30,11 @@ module.exports = (db) => {
 
     // delete product from user's listing
     router.post('/:seller_id/:product_id/delete',(req, res) => {
-      db.query(`DELETE FROM products WHERE user_id = $1 AND product_id =$2;`, [req.params["user_id"],req.params["product_id"]])
-      .then(data => {
-        res.json(data.rows[0]);
+      console.log("test: ",req.params["user_id"],req.params["product_id"]);
+      db.query(`DELETE FROM products WHERE user_id = $1 AND id = $2;`, [req.params["seller_id"],req.params["product_id"]])
+      .then( results => {
+        console.log('test: ', results);
+        res.redirect(`/users/${req.params["seller_id"]}`)
       })
       .catch(err => {
         res
