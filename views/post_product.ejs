@@ -7,13 +7,33 @@
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
+    <!-- GOOGLE FONTS: Karla, Open Sans, Oswald -->
+    <link href="https://fonts.googleapis.com/css2?family=Karla&family=Open+Sans&family=Oswald&display=swap" rel="stylesheet">
+
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
 
   <body>
     <% include partials/_header %>
-    <h1>Hello World!</h1>
-    <h2> <%= user.name %></h2>
+    <div class="form-wrapper">
+
+      <section>
+        <img src="" alt="">
+      </section>
+
+      <section>
+        <form action="/action_page.php" id="form1">
+          Product Name: <input type="text" name="product_name">
+          Price: <input type="text" name="product_price">
+          desc: <input type="text">
+          <input type="submit" >
+        </form>
+
+        <!-- <textarea name="comment" form="usrform">Enter text here...</textarea> -->
+      </section>
+
+    </div>
+
   </body>
 </html>

@@ -16,7 +16,37 @@ nav {
       a {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+        transition: 0.3s ease-in-out;
       }
+
+      a:hover {
+        color: #496742;
+        transition: 0.3s ease-in-out;
+      }
+
+      a.nav-link {
+        position: relative;
+        transition: 0.3s ease-in-out;
+      }
+
+      a.nav-link:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        right: 0;
+        background-color: #496742;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+      }
+
+      a.nav-link:hover:before {
+        visibility: visible;
+        width: 100%;
+      }
+
+
   }
 
   .nav-user {
