@@ -1,0 +1,70 @@
+// VARIABLES //
+$regular-font: 'Open Sans', sans-serif;
+$title-font: 'Oswald', sans-serif;
+$regular-text-color: #6b717f;
+$link-color: #95a986;
+$wrapper-margin: 0 auto;
+
+body {
+  font-family: $regular-font;
+  background-color: #EEE;
+  color: $regular-text-color;
+}
+
+// HEADER
+@import 'header';
+
+#msgHistory {
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// #box-wrapper {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+// }
+
+
+#box-styling{
+  background-color: #b2c5a4;
+  border-radius: 4px;
+  margin: 5px;
+  padding: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 65%;
+}
+
+#chatbox {
+  display: flex;
+  justify-content: center;
+}
+
+#textbox {
+  resize: none;
+  width: 50%;
+  border: none;
+  margin-right: 3px;
+  font-family: $regular-font;
+}
+
+#sendtext {
+  border: none;
+  background-color: $link-color;
+  font-family: $regular-font;
+  border-radius: 4px;
+  color: $regular-text-color;
+  background-color: #b2c5a4;
+}
+
+#sendtext:hover{
+  background-color: #95a986;
+}

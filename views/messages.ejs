@@ -5,6 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/messages.css" type="text/css" />
+
+  <!-- GOOGLE FONTS: Karla, Open Sans, Oswald -->
+  <link href="https://fonts.googleapis.com/css2?family=Karla&family=Open+Sans&family=Oswald&display=swap" rel="stylesheet">
+
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/messages.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
@@ -14,11 +20,14 @@
 
 <body>
   <section id="msgHistory">
+    <div id="box-wrapper">
     <% for (let i = 0; i < message.length; i++) { %>
-      <p><%= message[i].sender_id %></p>
-      <p><%= message[i].message_text %></p>
-      <hr class="line">
-      <p><%= message[i].date_time %></p>
+      <div id="box-styling">
+        <p><%= message[i].sender_id %></p>
+        <p><%= message[i].message_text %></p>
+        <p><%= message[i].date_time %></p>
+      </div>
+    </div>
     <% } %>
   </section>
 
