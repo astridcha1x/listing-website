@@ -33,20 +33,20 @@ body {
   padding-top: 72px;
 
 
-//   // PAGES ANIMATION //
+  // PAGES ANIMATION //
 
-//   animation: fadeInAnimation ease 0.3s;
-//   animation-iteration-count: 1;
-//   animation-fill-mode: forwards;
+  animation: fadeInAnimation ease 0.3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 
-// @keyframes fadeInAnimation {
-//   0% {
-//       opacity: 0;
-//   }
-//   100% {
-//       opacity: 1;
-//    }
-// }
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
 
   h1 {
     font-family: $title-font;

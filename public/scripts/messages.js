@@ -6,7 +6,6 @@ $(document).ready(() => {
       <div class="text">
         ${messageData.name}<br>
         <p>${messageData.message_text}</p>
-
         ${timeago.format(messageData.created_at)}
       </div>
     `
