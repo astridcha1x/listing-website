@@ -1,0 +1,33 @@
+// ---------- VARIABLES ---------- //
+
+// fonts //
+$regular-font: 'Open Sans', sans-serif;
+$title-font: 'Oswald', sans-serif;
+
+// colors //
+$regular-text-color: #6b717f;
+$secondary-color: #496742;
+$link-color: #95a986;
+$bg-color: #EEE;
+
+// spacing //
+$wrapper-margin: 0 auto;
+$minimum-margin: 50px;
+$minimum-padding: 20px;
+$min-margin-top: 20px;
+
+// transition //
+$fade-in: 0.3s ease-in-out;
+
+// -------------------------------- //
+
+.footer {
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding: 20px 40px;
+  p {
+    display: inline-block;
+    font-size: 18px;
+  }
+}

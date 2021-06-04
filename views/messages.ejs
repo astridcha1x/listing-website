@@ -5,6 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/messages.css" type="text/css" />
+
+  <!-- GOOGLE FONTS: Karla, Open Sans, Oswald -->
+  <link href="https://fonts.googleapis.com/css2?family=Karla&family=Open+Sans&family=Oswald&display=swap" rel="stylesheet">
+
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/messages.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
@@ -13,23 +21,27 @@
 </head>
 
 <body>
-  <%- include partials/_header %>
+  <% include partials/_header %>
+
+<form id="chatbox">
+    <input id="textbox" placeholder="Send a message">
+  <button id="sendtext">SUBMIT</button>
+</form>
+
+  <div id="box-wrapper">
   <section id="msgHistory">
-    <% for (let i = 0; i < message.length; i++) { %>
-      <p><%= message[i].name %></p>
-      <p><%= message[i].message_text %></p>
-      <hr class="line">
-      <p><%= message[i].date_time %></p>
-    <% } %>
-  </section>
+      <% for (let i = message.length - 1; i > 0; i--) { %>
+        <div id="box-styling">
+          <p><%= message[i].name %></p>
+          <p><%= message[i].message_text %></p>
+          <hr class="line">
+          <p><%= message[i].date_time %></p>
+        </div>
+      <% } %>
 
-  <section id="sentMessages">
-      <!-- functions in messages.js -->
-  </section>
+    </section>
+    </div>
 
-    <form id="chatbox">
-        <textarea id="textbox" placeholder="Send a message"></textarea>
-      <button id="sendtext">SUBMIT</button>
-  </form>
+  <% include partials/_footer %>
 </body>
 </html>

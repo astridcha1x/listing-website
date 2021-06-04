@@ -1,11 +1,12 @@
 $(document).ready(() => {
 
   const sendMessage = function(messageData) {
+    console.log(messageData);
     const html = `
       <div class="text">
-        ${messageData.sender_id}<br>
+        ${messageData.name}<br>
         <p>${messageData.message_text}</p>
-        <hr class="line">
+
         ${timeago.format(messageData.created_at)}
       </div>
     `
@@ -21,7 +22,7 @@ $(document).ready(() => {
 
     .then(data => {
       const html = sendMessage(data);
-      $("#sentMessages").append(html);
+      $("#msgHistory").prepend(html);
     })
 
     .then(() => {

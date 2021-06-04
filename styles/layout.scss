@@ -1,5 +1,6 @@
 // See: https://sass-lang.com/ //
 
+
 // ---------- VARIABLES ---------- //
 
 // fonts //
@@ -9,6 +10,8 @@ $title-font: 'Oswald', sans-serif;
 // colors //
 $regular-text-color: #6b717f;
 $secondary-color: #496742;
+$accent-color: #BC8896;
+$extra-color: #73607B;
 $link-color: #95a986;
 $bg-color: #EEE;
 
@@ -27,6 +30,7 @@ body {
   font-family: $regular-font;
   background-color: $bg-color;
   color: $regular-text-color;
+  padding-top: 72px;
 
 
 //   // PAGES ANIMATION //
@@ -46,9 +50,6 @@ body {
 
   h1 {
     font-family: $title-font;
-
-    color: #244751;
-
   }
 
   a {
@@ -68,7 +69,9 @@ div.hero-container {
   align-items: center;
   justify-content: center;
   height: 300px;
-  background-color: #496742;
+  background-color: $secondary-color;
+
+
 
   .hero-content {
 
@@ -80,10 +83,11 @@ div.hero-container {
     .fas {
       text-align: center;
       color: #FFF;
+      font-size: 50px;
     }
 
     h1 {
-      margin-bottom: 0;
+      margin: 8px 0 0 0;
       letter-spacing: 10px;
       font-family: $title-font;
       font-size: 60px;
@@ -109,8 +113,12 @@ div.wrapper {
 
     h2 {
       font-family: $title-font;
-      font-size: 24px;
+      font-size: 32px;
       text-align: center;
+      margin: 40px 0;
+      text-decoration: underline;
+      text-decoration-color: $accent-color;
+      text-underline-position: under;
     }
 
   // featured Items section
@@ -125,13 +133,13 @@ div.wrapper {
 
       .featured-items {
       position: relative;
-      width: 260px;
+      width: 320px;
       display: flex;
       flex-direction: column;
 
         img {
           object-fit: fill;
-          width: 260px;
+          width: 320px;
         }
 
       }
@@ -140,15 +148,18 @@ div.wrapper {
         width: 100%;
 
         button {
-          background-color: $secondary-color;
+          background-color: $link-color;
           margin: 16px 0;
           width: 100%;
           height: 52px;
           border-radius: 4px;
           border: none;
+          color: #FFF;
+          transition: $fade-in;
         }
         button:hover {
-          background-color: $regular-text-color;
+          background-color: $secondary-color;
+          transition: $fade-in;
         }
       }
     }
@@ -168,6 +179,7 @@ div.wrapper {
       background-color: $secondary-color;
       border-radius: 8px 0 0 8px;
       padding: 40px;
+      color: #FFF;
 
       h2 {
       font-family: $title-font;
@@ -198,3 +210,9 @@ div.wrapper {
 
 // PRODUCT POSTING PAGE //
 @import 'posting';
+
+// MESSAGES PAGE //
+@import 'messages';
+
+// FOOTER //
+@import 'footer';

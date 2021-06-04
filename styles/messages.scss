@@ -1,0 +1,97 @@
+// MESSAGING PAGE //
+
+// ---------- VARIABLES ---------- //
+
+// fonts //
+$regular-font: 'Open Sans', sans-serif;
+$title-font: 'Oswald', sans-serif;
+
+// colors //
+$regular-text-color: #6b717f;
+$secondary-color: #496742;
+$accent-color: #BC8896;
+$extra-color: #73607B;
+$link-color: #95a986;
+$bg-color: #EEE;
+
+// spacing //
+$wrapper-margin: 0 auto;
+$minimum-margin: 50px;
+$minimum-padding: 20px;
+$min-margin-top: 20px;
+
+// transition //
+$fade-in: 0.3s ease-in-out;
+
+// -------------------------------- //
+body {
+  font-family: $regular-font;
+  background-color: $bg-color;
+  color: $regular-text-color;
+}
+
+// HEADER
+@import 'header';
+
+#msgHistory {
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#box-wrapper {
+  padding: 40px;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+}
+
+
+#box-styling, .text {
+  background-color: #FFF;
+  border-radius: 4px;
+  margin: 5px;
+  padding: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 65%;
+  margin-bottom: 20px;
+}
+
+.text {
+  padding: 20px;
+}
+
+#chatbox {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 20px;
+}
+
+#textbox {
+  resize: none;
+  width: 50%;
+  border: none;
+  margin-right: 3px;
+  font-family: $regular-font;
+  font-size: 20px;
+}
+
+#sendtext {
+  border: none;
+  background-color: $link-color;
+  font-family: $regular-font;
+  border-radius: 4px;
+  color: $regular-text-color;
+  background-color: #b2c5a4;
+  height: 40px;
+}
+
+#sendtext:hover{
+  background-color: #95a986;
+}

@@ -1,3 +1,4 @@
+
 // ---------- VARIABLES ---------- //
 
 // fonts //
@@ -7,6 +8,8 @@ $title-font: 'Oswald', sans-serif;
 // colors //
 $regular-text-color: #6b717f;
 $secondary-color: #496742;
+$accent-color: #BC8896;
+$extra-color: #73607B;
 $link-color: #95a986;
 $bg-color: #EEE;
 
@@ -61,11 +64,12 @@ $fade-in: 0.3s ease-in-out;
   .product-wrapper {
 
     max-width: 100%;
-    margin: $wrapper-margin;
     padding: 0 40px;
 
     .product-page-content {
       display: flex;
+      justify-content: space-around;
+      margin: $minimum-margin;
     }
 
     .product-img-container {
@@ -118,6 +122,7 @@ $fade-in: 0.3s ease-in-out;
         justify-content: space-between;
         margin: $minimum-margin;
         width: 475px;
+        margin-left: 0;
       }
 
     }

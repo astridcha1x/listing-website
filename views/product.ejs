@@ -39,7 +39,8 @@
 
             <p><%= products.description%></p>
             <p><%= user.image %></p>
-            <p class="username"><%= user.name %></p>
+
+            <p class="username"><span>Meet your Merchant: &nbsp </span><%= user.name %></p>
       </div>
 
       <div class="button-container">
@@ -55,7 +56,8 @@
 
   </section>
 
-     </div>
+  </div>
+  <% include partials/_footer %>
   </body>
 </html>
 

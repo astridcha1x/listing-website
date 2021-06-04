@@ -10,6 +10,7 @@ $title-font: 'Oswald', sans-serif;
 $regular-text-color: #6b717f;
 $secondary-color: #496742;
 $accent-color: #BC8896;
+$extra-color: #73607B;
 $link-color: #95a986;
 $bg-color: #EEE;
 
@@ -46,8 +47,18 @@ $fade-in: 0.3s ease-in-out;
       padding: 0 40px;
       margin-top: 40px;
       font-family: $title-font;
+      font-size: 18px;
       color: $accent-color;
+    }
 
+    .filter-btn:hover {
+      border: none;
+      border-right: 1px solid;
+      padding: 0 40px;
+      margin-top: 40px;
+      font-family: $title-font;
+      background-color: $bg-color;
+      color: $extra-color;
     }
 
   }

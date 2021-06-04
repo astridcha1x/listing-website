@@ -8,6 +8,7 @@ $title-font: 'Oswald', sans-serif;
 $regular-text-color: #6b717f;
 $secondary-color: #496742;
 $accent-color: #BC8896;
+$extra-color: #73607B;
 $link-color: #95a986;
 $bg-color: #EEE;
 
@@ -28,6 +29,15 @@ $border-radius: 4px;
 button {
   border: none;
   border-radius: $border-radius;
+  padding-top: 4px;
+  color: $extra-color;
+  transition: $fade-in;
+}
+
+button:hover {
+  background-color: $link-color;
+  color: #FFF;
+  transition: $fade-in;
 }
 
 // USER HERO SECTION / image, username, bio
@@ -76,6 +86,9 @@ button {
     font-family: $title-font;
     font-size: 24px;
     text-align: center;
+    text-decoration: underline;
+    text-decoration-color: $accent-color;
+    text-underline-position: under;
   }
 
   button {
@@ -110,6 +123,9 @@ button {
     .listing-product-name {
       text-align: center;
       margin: 0 0 10px 0;
+      font-family: $title-font;
+      font-size: 18px;
+      color: $secondary-color;
     }
 
   }

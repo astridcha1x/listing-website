@@ -1,3 +1,4 @@
+
 // ---------- VARIABLES ---------- //
 
 // fonts //
@@ -7,6 +8,8 @@ $title-font: 'Oswald', sans-serif;
 // colors //
 $regular-text-color: #6b717f;
 $secondary-color: #496742;
+$accent-color: #BC8896;
+$extra-color: #73607B;
 $link-color: #95a986;
 $bg-color: #EEE;
 
@@ -22,15 +25,30 @@ $fade-in: 0.3s ease-in-out;
 // -------------------------------- //
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
 
-  .title {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0.5rem 4rem;
+  background-color: #FFF;
+  z-index: 1;
+
+  p.title {
     font-family: $title-font;
+    color: $secondary-color;
+    transition: $fade-in;
+  }
+
+
+  .title a {
+    transition: $fade-in;
+  }
+
+  .title a:hover {
+    color: $secondary-color;
+    transition: $fade-in;
   }
 
   div.nav-links {
@@ -47,7 +65,7 @@ nav {
       }
 
       a:hover {
-        color: #496742;
+        color: $secondary-color;
         transition: $fade-in;
       }
 
@@ -76,7 +94,23 @@ nav {
 
   }
 
+  form {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+  }
+
   .nav-user {
     font-family: $title-font;
+    color: $secondary-color;
+    transition: $fade-in;
+    height: 40px;
+    padding: 0 20px;
+
+  }
+
+  .nav-user:hover {
+    color: #FFF;
+    transition: $fade-in;
   }
 }

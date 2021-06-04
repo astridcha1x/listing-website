@@ -5,7 +5,8 @@ const router  = express.Router();
 module.exports = (db) => {
 
   router.get("/:msg_master_id/:user_id", (req, res) => {
-    req.session.userID = req.params["user_id"];
+    const userId = req.params["user_id"];
+    req.session.userID = userId;
     const dateStart = `SELECT date_time FROM message_master WHERE id = $1;`;
     const details = `SELECT message_details.* , users.name as name FROM message_details JOIN users ON users.id = sender_id WHERE message_master_id = $1;`;
 
@@ -21,7 +22,7 @@ module.exports = (db) => {
         console.log("dateStart: ", date_start);
         const message = results[1].rows;
         console.log("message: ", message);
-        const templateVars = {date_start, message};
+        const templateVars = {userId, date_start, message};
 
         res.render('messages', templateVars);
       })
@@ -39,19 +40,21 @@ module.exports = (db) => {
 
     const message = req.body.message;
 
-    db.query(`INSERT INTO message_details (sender_id, date_time, message_text, message_master_id) VALUES ($3, $2, $1, 1) RETURNING *;`, [message, new Date(), userID])
+    db.query(`INSERT INTO message_details (sender_id, date_time, message_text, message_master_id) VALUES ($1, $2, $3, 1) RETURNING *;`, [userID, new Date(), message])
 
     .then(data => {
-
       const sender_id = data.rows[0]["sender_id"];
-      console.log("data.rows[0]: ", data.rows[0]);
       const date_time = data.rows[0]["date_time"];
       const message_text = data.rows[0]["message_text"];
 
-      const templateVars = {sender_id, date_time, message_text};
-
+      db.query(`SELECT name FROM users WHERE id = $1`,[sender_id])
+      .then(results => {
+      // console.log("data.rows[0]: ", data.rows[0]);
+        // console.log("results: ",results);
+        const name = results.rows[0].name;
+        const templateVars = {sender_id, date_time, message_text, name};
       res.json(templateVars);
-
+      })
     })
     .catch(err => {
       res
