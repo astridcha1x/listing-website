@@ -30,10 +30,11 @@ $fade-in: 0.3s ease-in-out;
 .posting-container {
   display: flex;
   margin-top: 100px;
+  justify-content: space-between;
 }
 
 .posting-form-img {
-
+  width: 40%;
   .form-img-container {
     background-color: #FFF;
     width: 720px;
@@ -73,7 +74,8 @@ $fade-in: 0.3s ease-in-out;
       height: 40px;
       border: none;
       border-radius: 6px;
-      background-color: $bg-color;
+      background-color: $link-color;
+      color: #FFF;
     }
   }
 

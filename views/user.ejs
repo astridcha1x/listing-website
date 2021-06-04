@@ -24,7 +24,7 @@
       <div class="user-hero-username">
         <span><%= user.name %></span>
         <!-- MESSAGE BUTTON -->
-        <div>
+        <div class="message-btn">
           <form action="/messages/1/<%= user.id %>" method="GET">
             <button>MY MESSAGES</button>
           </form>
@@ -36,42 +36,44 @@
 
     <div class="user-info-wrapper">
     <!-- FAVOURITES SECTION -->
-    <h2>FAVOURITES</h2>
-      <section class="favourites info-container">
-        <% for (let item in favourites) { %>
-          <div class="fav item-container">
-            <div class=""><img src="<%= favourites[item].image %>" width="200px" height="200px" alt="succulent"></div>
-            <form method="GET" action="/product/<%= favourites[item].user_id %>/<%= favourites[item].fav_product_id %>">
-              <button>View Details</button>
-            </form>
-            <form method="POST" action="/favourites/<%= favourites[item].fav_user_id %>/delete_favourites/<%= favourites[item].favourite_id %>">
-              <button>Remove</button>
-            </form>
-          </div>
-        <% } %>
-        </section>
-
-      <!-- USER LISTING SECTION -->
-      <h2>MY LISTINGS</h2>
-      <section class="user-listing info-container">
-        <% for (let item in products) { %>
-          <div class="fav item-container">
-            <p><%= products[item].name %></p>
-            <div><img src="<%= products[item].image %>" width="200px" height="200px" alt="succulent"></div>
-            <div class="user-listing-buttons">
-              <form method="GET" action="/product/<%= products[item].user_id %>/<%= products[item].id %>">
-                <button>View details</button>
-              </form>
-              <form method="POST" action="/product/<%= products[item].user_id %>/<%= products[item].id %>/delete">
-                <button>Delete Product</button>
-              </form>
-              <form method="POST" action="/product/sold/<%= products[item].user_id %>/<%= products[item].id %>">
-                <button>Sold Out</button>
-              </form>
+      <h2>FAVOURITES</h2>
+        <section class="favourites info-container">
+          <% for (let item in favourites) { %>
+            <div class="fav item-container">
+              <div><img src="<%= favourites[item].image %>" width="200px" height="200px" alt="succulent"></div>
+              <div class="buttons-container">
+                <form method="GET" action="/product/<%= favourites[item].user_id %>/<%= favourites[item].fav_product_id %>">
+                  <button>View Details</button>
+                </form>
+                <form method="POST" action="/favourites/<%= favourites[item].fav_user_id %>/delete_favourites/<%= favourites[item].favourite_id %>">
+                  <button>Remove</button>
+                </form>
+              </div>
             </div>
-          </div>
-        <% } %>
-      </section>
+          <% } %>
+          </section>
+
+        <!-- USER LISTING SECTION -->
+        <h2>MY LISTINGS</h2>
+        <section class="user-listing info-container">
+          <% for (let item in products) { %>
+            <div class="fav item-container">
+              <p class="listing-product-name"><%= products[item].name %></p>
+              <div><img src="<%= products[item].image %>" width="200px" height="200px" alt="succulent"></div>
+              <div class="buttons-container">
+                <form method="GET" action="/product/<%= products[item].user_id %>/<%= products[item].id %>">
+                  <button>View details</button>
+                </form>
+                <form method="POST" action="/product/<%= products[item].user_id %>/<%= products[item].id %>/delete">
+                  <button>Delete Product</button>
+                </form>
+                <form method="POST" action="/product/sold/<%= products[item].user_id %>/<%= products[item].id %>">
+                  <button>Sold Out</button>
+                </form>
+              </div>
+            </div>
+          <% } %>
+        </section>
 
   </div>
   </body>

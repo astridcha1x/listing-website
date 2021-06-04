@@ -20,19 +20,14 @@ $min-margin-top: 20px;
 // transition //
 $fade-in: 0.3s ease-in-out;
 
+// border //
+$border-radius: 4px;
+
 // -------------------------------- //
 
-.user-info-wrapper {
-  max-width: 100%;
-  margin: $wrapper-margin;
-  padding: 0 40px;
-
-  h2 {
-    font-family: $title-font;
-    font-size: 24px;
-    text-align: center;
-  }
-
+button {
+  border: none;
+  border-radius: $border-radius;
 }
 
 // USER HERO SECTION / image, username, bio
@@ -44,14 +39,13 @@ $fade-in: 0.3s ease-in-out;
   background-color: $secondary-color;
 
   .user-hero-username {
+    text-align: center;
+
     span {
       margin-bottom: 0;
       font-family: $title-font;
       font-size: 60px;
       color: #FFF;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
     }
 
     p {
@@ -59,11 +53,44 @@ $fade-in: 0.3s ease-in-out;
       color: #FFF;
 
     }
-
+    .message-btn {
+      margin-top: $min-margin-top;
+      button {
+        padding: 4px;
+        margin-top: 10px;
+        width: 200px;
+      }
+    }
   }
 }
 
-// FAVOURITES & USER LISTINGS / fav'd items //
+// FAVOURITES & USER LISTINGS //
+
+.user-info-wrapper {
+  max-width: 100%;
+  margin: $wrapper-margin;
+  padding: 0 40px;
+
+
+  h2 {
+    font-family: $title-font;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  button {
+    padding: 4px;
+    margin-top: 10px;
+    width: 200px;
+  }
+
+  .buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
 
 .info-container {
   height: 400px;
@@ -72,11 +99,19 @@ $fade-in: 0.3s ease-in-out;
   justify-content: left;
   padding: 40px;
   background-color: #98b89182;
+  border-radius: $border-radius;
 
   .fav {
     padding: 20px;
     margin-right: 40px;
     background-color: #FFF;
+    border-radius: $border-radius;
+
+    .listing-product-name {
+      text-align: center;
+      margin: 0 0 10px 0;
+    }
+
   }
 
 }
