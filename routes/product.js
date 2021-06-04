@@ -54,22 +54,6 @@ module.exports = (db) => {
       });
     });
 
-
     return router;
-
-
-  // product main page for one specific seller
-  // router.get('/:user_id',(req, res) => {
-  //   db.query(`SELECT * FROM product_on_sales WHERE seller_id = $1;`,[req.params["user_id"]])
-  //   .then(data => {
-  //     res.json(data.rows);
-  //   })
-  //   .catch(err => {
-  //     res
-  //       .status(500)
-  //       .json({ error: err.message });
-  //   });
-  // });
-
 
 };

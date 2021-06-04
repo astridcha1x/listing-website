@@ -19,19 +19,22 @@
 
   <body>
     <% include partials/_header %>
+
     <div class="product-wrapper">
 
       <div class="product-page-content">
-    <section class="product-img-container">
-    <!-- <img class= "product-img" src="https://images.unsplash.com/photo-1508022713622-df2d8fb7b4cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1275&q=80" width="600px" height="700px"> -->
-    <img class="product-img" src="<%= products.image %>" width= 600px height="700px" alt="item-img">
-    </section>
 
-    <section class="product-info-container">
+        <!-- IMAGE OF PRODUCT -->
+        <section class="product-img-container">
+          <img class="product-img" src="<%= products.image %>" width= 600px height="700px" alt="item-img">
+        </section>
 
-      <div class="product-info">
-        <h1><%= products.name%></h1>
-          <h2>$<%= products.price / 100 %>.00</h2>
+        <!-- PRODUCT DETAILS -->
+      <section class="product-info-container">
+
+        <div class="product-info">
+          <h1><%= products.name%></h1>
+            <h2>$<%= products.price / 100 %>.00</h2>
 
             <% if (products.quantity === 0) { %>
               <p>SOLD OUT</p>
@@ -41,10 +44,11 @@
             <p><%= user.image %></p>
 
             <p class="username"><span>Meet your Merchant: &nbsp </span><%= user.name %></p>
-      </div>
+        </div>
 
+        <!-- BUTTONS -->
       <div class="button-container">
-        <form action="/messages/1/<%= user.id %>" method="GET"><button class="purchase-btn">
+        <form action="/messages/1/1" method="GET"><button class="purchase-btn">
           CONTACT SELLER
         </button></form>
       <form action="/favourites/1/<%= products.id %>" method="POST">
@@ -57,6 +61,7 @@
   </section>
 
   </div>
+
   <% include partials/_footer %>
   </body>
 </html>

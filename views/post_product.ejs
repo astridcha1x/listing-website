@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home Page</title>
+    <title>Post Product</title>
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -16,16 +16,21 @@
 
   <body>
     <% include partials/_header %>
+
     <div class="form-wrapper">
 
       <div class="posting-container">
 
+      <!-- IMAGE INSERT -->
       <section class="posting-form-img">
         <div class="form-img-container">Image</div>
       </section>
 
+      <!-- POST FORMS -->
       <section class="posting-form-content">
+
         <form class="posting-input-field" action="/posting/new_post" method="POST" id="form1">
+
           Image URL: <input class="textarea" type="text" name="img">
           Product Name: <input class="textarea" type="text" name="name">
           Price: <input class="textarea" type="text" name="price">
@@ -33,7 +38,9 @@
           Type: <input class="textarea" type="text" name="type">
           Quantity: <input class="textarea" type="text" name="qty">
           Seller ID: <input class="textarea" type="text" name="user_id">
+
           <button type="submit">Post Product</button>
+
         </form>
 
       </section>

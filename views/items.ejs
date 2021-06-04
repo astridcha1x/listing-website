@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Listing</title>
+    <title>Product Listings</title>
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -43,6 +43,8 @@
         </form>
 
       </section>
+
+      <!-- PRODUCTS -->
       <section class="items_container">
         <% for (let item in products) { %>
           <div class="featured-items"><img src="<%= products[item].image %>" alt="succulent">
@@ -55,6 +57,7 @@
         <% } %>
       </section>
     </div>
+
     <% include partials/_footer %>
   </body>
 </html>

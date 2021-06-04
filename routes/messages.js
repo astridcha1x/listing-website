@@ -36,7 +36,6 @@ module.exports = (db) => {
 
   router.post("/messages", (req, res) => {
     const userID = req.session.userID;
-    console.log("userID: ", userID);
 
     const message = req.body.message;
 
@@ -49,8 +48,6 @@ module.exports = (db) => {
 
       db.query(`SELECT name FROM users WHERE id = $1`,[sender_id])
       .then(results => {
-      // console.log("data.rows[0]: ", data.rows[0]);
-        // console.log("results: ",results);
         const name = results.rows[0].name;
         const templateVars = {sender_id, date_time, message_text, name};
       res.json(templateVars);

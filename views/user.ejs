@@ -15,7 +15,6 @@
   </head>
 
   <body>
-
     <% include partials/_header %>
 
     <!-- HERO SECTION -->
@@ -23,6 +22,7 @@
       <img src="" alt="">
       <div class="user-hero-username">
         <span><%= user.name %></span>
+
         <!-- MESSAGE BUTTON -->
         <div class="message-btn">
           <form action="/messages/1/<%= user.id %>" method="GET">
@@ -31,10 +31,10 @@
         </div>
       </div>
 
-
     </div>
 
     <div class="user-info-wrapper">
+
     <!-- FAVOURITES SECTION -->
       <h2>FAVOURITES</h2>
         <section class="favourites info-container">
@@ -76,7 +76,7 @@
         </section>
 
   </div>
+
   <% include partials/_footer %>
   </body>
-</html>
 </html>
