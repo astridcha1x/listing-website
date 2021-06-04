@@ -37,7 +37,7 @@
             <h2>$<%= products.price / 100 %>.00</h2>
 
             <% if (products.quantity === 0) { %>
-              <p>SOLD OUT</p>
+              <p class="product_soldout">SOLD OUT</p>
             <% } %>
 
             <p><%= products.description%></p>

@@ -85,6 +85,10 @@ $fade-in: 0.3s ease-in-out;
         display: none;
       }
 
+      .product_soldout {
+        color: $accent-color;
+      }
+
       p.username {
         font-family: $title-font;
         font-size: 24px;
