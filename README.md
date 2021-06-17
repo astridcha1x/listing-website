@@ -26,3 +26,4 @@ This website is a midterm project for the [Lighthouse Labs Web Development Bootc
 ![Product Page](https://github.com/astridcha1x/listing-website/blob/master/public/images/product-page.png)
 ![Posting Page](https://github.com/astridcha1x/listing-website/blob/master/public/images/posting-page.png)
 ![Profile Page](https://github.com/astridcha1x/listing-website/blob/master/public/images/profile-page.png)
+
